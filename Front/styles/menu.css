@@ -99,8 +99,8 @@ a{
     .container {
         flex-direction: row;
         justify-content: space-around;
-        margin-left: 30px; /* Ajuste de margem para telas menores */
-        gap: 10px; /* Reduzido ainda mais em telas menores */
+        margin-left: 30px;
+        gap: 10px;
     }
 
     .menu-item {
@@ -159,29 +159,3 @@ body.dark .notificacao p {
 body.dark .icon-lua {
     content: url("/Front/src/sol.png");
 }
-
-body.dark {
-    background-image: url("/Front/src/fundoP.svg");
-    background-size: cover;
-    background-repeat: no-repeat; 
-    background-position: center; 
-    background-attachment: fixed; 
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
-body.dark .menu-item p {
-    color: #ffffff;
-}
-
-body.dark .notificacao {
-    background-color: #000000;
-}
-
-body.dark .notificacao p {
-    color: #ffffff;
-}
-
-body.dark .icon-lua {
-    content: url("/Front/src/sol.png");
-} 
