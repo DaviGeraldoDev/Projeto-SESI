@@ -41,12 +41,33 @@ h1{
 
 .refeicao{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 120px;
     height: 140px;
-    padding: 10px;
+    padding: 20px;
     border: solid #9d9d9d 1px;
     font-size: 20px;
 }
 
+.campo_comer, .campo_nao_comer, .campo_nao_resp{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;  
+} 
+
+.campo_comer{
+   color: green;
+}
+
+.campo_nao_comer{
+    color: red;
+}
+
+.campo_nao_resp{
+    color: gray;
+}

@@ -1,3 +1,28 @@
+function render_campo(info_comer,  refeicao){
+    const comer = document.createElement('div')
+    comer.setAttribute('class', 'campo_comer')
+    comer.textContent = info_comer[0]
+
+    const nao_comer = document.createElement('div')
+    nao_comer.setAttribute('class', 'campo_nao_comer')
+    nao_comer.textContent = info_comer[1]
+
+    const nao_resp = document.createElement('div')
+    nao_resp.setAttribute('class', 'campo_nao_resp')
+    nao_resp.textContent = info_comer[2]
+
+    refeicao.appendChild(comer)
+    refeicao.appendChild(nao_comer)
+    refeicao.appendChild(nao_resp)
+}
+
+function render_refeicao(refeicao, diaSemana){
+    const div = document.createElement('div')
+    div.setAttribute('class', 'refeicao')
+    render_campo(refeicao, div)
+    diaSemana.appendChild(div)
+}
+
 function render_cardapio(info_diaSemana) {
 
     const cardapio = document.getElementById('cardapio')
@@ -8,34 +33,22 @@ function render_cardapio(info_diaSemana) {
     const dia = document.createElement('p')
     dia.textContent = info_diaSemana.dia
 
-    const cafe = document.createElement('div')
-    cafe.setAttribute('class', 'refeicao')
-    cafe.textContent = info_diaSemana.cafe
-
-    const almoco = document.createElement('div')
-    almoco.setAttribute('class', 'refeicao')
-    almoco.textContent = info_diaSemana.almoco
-
-    const lanche = document.createElement('div')
-    lanche.setAttribute('class', 'refeicao')
-    lanche.textContent = info_diaSemana.lanche
-
-    
     diaSemana.appendChild(dia)
-    diaSemana.appendChild(cafe)
-    diaSemana.appendChild(almoco)
-    diaSemana.appendChild(lanche)
+
+    render_refeicao(info_diaSemana.cafe, diaSemana)
+    render_refeicao(info_diaSemana.almoco, diaSemana)
+    render_refeicao(info_diaSemana.lanche, diaSemana)
 
     cardapio.appendChild(diaSemana)
 
 }
 
 const cardapio = [
-    {dia: 'Seg', cafe: '780', almoco: '800', lanche: '500'},
-    {dia: 'Ter', cafe: '500', almoco: '800', lanche: '750'},
-    {dia: 'Qua', cafe: '700', almoco: '475', lanche: '650'},
-    {dia: 'Qui', cafe: '400', almoco: '550', lanche: '780'},
-    {dia: 'Sex', cafe: '300', almoco: '450', lanche: '480'},
+    {dia: 'Seg', cafe: ['700','50','100'], almoco: ['700','50','100'], lanche: ['700','50','100']},
+    {dia: 'Ter', cafe: ['700','50','100'], almoco: ['700','50','100'], lanche: ['700','50','100']},
+    {dia: 'Qua', cafe: ['700','50','100'], almoco: ['700','50','100'], lanche: ['700','50','100']},
+    {dia: 'Qui', cafe: ['700','50','100'], almoco: ['700','50','100'], lanche: ['700','50','100']},
+    {dia: 'Sex', cafe: ['700','50','100'], almoco: ['700','50','100'], lanche: ['700','50','100']},
 ]
 
 cardapio.forEach(info_diaSemana => {
