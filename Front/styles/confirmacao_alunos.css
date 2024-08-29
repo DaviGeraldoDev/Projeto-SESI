@@ -1,0 +1,64 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("/Front/src/fundo_branco.svg");
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #ffff, #FF0000);
+  padding: 20px;
+  width: 100%;
+}
+
+.header img {
+  height: 50px;
+  margin-left: 25px;
+}
+
+.header h1 {
+  color: white;
+  margin-right: 25px;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  flex-grow: 1;
+  width: 100%;
+}
+
+table {
+  width: 70%; 
+  height: 50%;
+  border-collapse: collapse;  
+  border: 2px solid red; 
+  background-color: #f9f9f9;
+}
+
+th, td {
+  border: 1px solid rgb(0, 0, 0); 
+  padding: 10px; 
+  text-align: center; 
+  background-color: #d4d4d4; 
+}
+
+th {
+  background-color: #bcbcbc; 
+}
+
+h2 {
+  margin-bottom: 20px;
+}

@@ -1,0 +1,47 @@
+html, body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(imagens/imagemfundo.svg);
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment:fixed ;
+}
+
+.main_line{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.est_card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    width: 200px;
+}
+
+.card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid red 5px;
+    border-radius: 20px;
+}
+
+.img_card{
+    width: 150px;
+    height: 150px;
+    padding: 20px;
+}
+

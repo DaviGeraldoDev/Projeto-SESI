@@ -1,0 +1,71 @@
+html, body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url("/Front/src/fundo_branco.svg");
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment:fixed ;
+}
+
+.est_cardapio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    padding: 10px;
+    border: solid red 5px;
+    border-radius: 25px;    
+}
+
+#cardapio{
+    display: flex;
+    margin: 20px;
+}
+
+.diaSemana{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.refeicao{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 121px;
+    height: 143px;
+    padding: 10px;
+    border: solid #9d9d9d 1px;
+    font-size: 12px;
+    
+}
+.refeicaoAtiva{
+    background-color: #acf74d;
+    border: solid #77d500 2px;
+}
+
+@media (max-width: 800px) {
+    .refeicao{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 75px;
+        height: 90px;
+        padding: 10px;
+        border: solid #9d9d9d 1px;
+        font-size: 10px;
+        
+    }
+        
+}

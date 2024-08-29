@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-image: url("/Front/src/fundo_branco.svg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        header {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            height: 13%;
+        }
+
+        header img {
+            margin: 30px;
+            margin-left: 80px;
+            width: 170px;
+            height: 60px;
+        }
+
+        #container {
+            background-color: #ffffff;
+            border: 5px solid #FF0000;
+            border-radius: 15px;
+            padding: 20px 50px;
+            padding-top: 40px;
+            width: 600px;
+            position: relative;
+        }
+
+        h2 {
+            margin: 0;
+            font-weight: bold;
+            color: #333;
+            margin-left: 375px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: center;
+            height: 80px;
+        }
+
+        th {
+            background-color: #ddd;
+            font-weight: bold;
+        }
+
+        td {
+            border: 2px solid #ddd;
+        }
+
+        input[type="text"] {
+            text-align: center;
+            width: 100%;
+            height: 100%;
+            padding: 7%;
+            border: 0px solid #ddd;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 13px;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .button {
+            background-color: #FF0000;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 40%;
+            margin: 5px 0;
+        }
+
+        img {
+            width: 120px;
+        }
+        
+    </style>
+</head>
+
+<header>
+    <img src="/Front/src/Sesi-SP.jpg">
+    <h2>Gestão de Cardápio</h2>
+</header>
+
+<body>
+    <div id="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Seg</th>
+                    <th>Ter</th>
+                    <th>Qua</th>
+                    <th>Qui</th>
+                    <th>Sex</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" placeholder="Digite aqui"></td>
+                    <td><input type="text" placeholder="Digite aqui"></td>
+                    <td><input type="text" placeholder="Digite aqui"></td>
+                    <td><input type="text" placeholder="Digite aqui"></td>
+                    <td><input type="text" placeholder="Digite aqui"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" placeholder="Digite aqui"></td>
+                    <td><input type="text" placeholder="Digite aqui"></td>
+                    <td><input type="text" placeholder="Digite aqui"></td>
+                    <td><input type="text" placeholder="Digite aqui"></td>
+                    <td><input type="text" placeholder="Digite aqui"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" placeholder="Digite aqui"></td>
+                    <td><input type="text" placeholder="Digite aqui"></td>
+                    <td><input type="text" placeholder="Digite aqui"></td>
+                    <td><input type="text" placeholder="Digite aqui"></td>
+                    <td><input type="text" placeholder="Digite aqui"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="button-container">
+            <button class="button">Limpar</button>
+            <button class="button">Confirmar</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
