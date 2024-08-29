@@ -1,5 +1,0 @@
-Alunos confirmado "SIM" + Alunos confirmado "NAO" - TOTAL = Escape
-Funcionamento mínimo das paginas
-Páginas de notificação (ADM)
-Pagina gerenciamento de acesso
-    Gerenciamento de aluno
