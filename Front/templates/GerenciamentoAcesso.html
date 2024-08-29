@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Refeições</title>
+    <link rel="stylesheet" href="/Front/styles/GerenciamentoAcesso.css">
+</head>
+<body>
+    <header>
+        <img src="/Front/src/Sesi-SP.jpg" alt="Logo SESI" class="logo-sesi">
+        <h2>Gerenciamento de Acesso</h2>
+    </header>
+<div class="container-tabela">
+    <div class="filtro">
+        <label for="filtro">Filtrar salas:</label>
+        <select id="filtro">
+            <option value="">Todas</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+        </select>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Sala</th>
+                <th>Café da Manhã</th>
+                <th>Almoço</th>
+                <th>Café da Tarde</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="categoria-A categoria-B categoria-C">
+                <td>3°EM</td>
+                <td class="status-bloqueado">
+                    <input type="checkbox" class="checkbox-cafe-da-manha" id="cafe-da-manha">
+                </td>
+                <td class="status-bloqueado">
+                    <input type="checkbox" class="checkbox-almoco" id="almoco">
+                </td>
+                <td class="status-bloqueado">
+                    <input type="checkbox" class="checkbox-cafe-da-tarde" id="cafe-da-tarde">
+                </td>
+            </tr>
+            <tr class="categoria-A categoria-B categoria-C">
+                <td>2°EM</td>
+                <td class="status-bloqueado">
+                    <input type="checkbox" class="checkbox-cafe-da-manha" id="cafe-da-manha">
+                </td>
+                <td class="status-bloqueado">
+                    <input type="checkbox" class="checkbox-almoco" id="almoco">
+                </td>
+                <td class="status-bloqueado">
+                    <input type="checkbox" class="checkbox-cafe-da-tarde" id="cafe-da-tarde">
+                </td>
+            </tr>
+            <tr class="categoria-A categoria-B categoria-C">
+                <td>1°EM</td>
+                <td class="status-bloqueado">
+                    <input type="checkbox" class="checkbox-cafe-da-manha" id="cafe-da-manha">
+                </td>
+                <td class="status-bloqueado">
+                    <input type="checkbox" class="checkbox-almoco" id="almoco">
+                </td>
+                <td class="status-bloqueado">
+                    <input type="checkbox" class="checkbox-cafe-da-tarde" id="cafe-da-tarde">
+                </td>
+            </tr>
+            <tr class="categoria-A categoria-B categoria-C">
+                <td>9°ANO</td>
+                <td class="status-bloqueado">
+                    <input type="checkbox" class="checkbox-cafe-da-manha" id="cafe-da-manha">
+                </td>
+                <td class="status-bloqueado">
+                    <input type="checkbox" class="checkbox-almoco" id="almoco">
+                </td>
+                <td class="status-bloqueado">
+                    <input type="checkbox" class="checkbox-cafe-da-tarde" id="cafe-da-tarde">
+                </td>
+            </tr>
+            <tr class="categoria-A categoria-B categoria-C">
+                <td>8°ANO</td>
+                <td class="status-bloqueado">
+                    <input type="checkbox" class="checkbox-cafe-da-manha" id="cafe-da-manha">
+                </td>
+                <td class="status-bloqueado">
+                    <input type="checkbox" class="checkbox-almoco" id="almoco">
+                </td>
+                <td class="status-bloqueado">
+                    <input type="checkbox" class="checkbox-cafe-da-tarde" id="cafe-da-tarde">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script src="/Front/js/GerenciamentoAcesso.js"></script>
+</body>
+</html>
