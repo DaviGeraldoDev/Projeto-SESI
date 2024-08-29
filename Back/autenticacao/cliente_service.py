@@ -16,6 +16,20 @@ def checagem_campos(*args):
         return True
     return False
 
+def cadastro_cliente(nome, usuario, senha, genero, data_nascimento):
+    checagem = checagem_campos(nome, usuario, senha, genero, data_nascimento)
+    if checagem == True:
+        verificacao = verifica_usuario_existente_db(usuario)
+        if verificacao == True:
+            #Hash acontece na classe, se fosse pra definir num de caracteres na senha ou tipo de caracteres
+            #Faria aqui
+            novo_cliente = Cliente(nome, usuario, senha, genero, data_nascimento)
+            insert_tabela(novo_cliente)
+            return 'Cliente cadastrado com sucesso', 200
+
+        return 'Usuário existente',  401
+    return 'Preencha todos os campos',  401
+
 def verifica_login(login,senha):
     checagem = checagem_campos(login, senha)
     if checagem == True: 
