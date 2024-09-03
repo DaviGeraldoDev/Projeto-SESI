@@ -22,7 +22,7 @@ main{
     align-items: center;
     max-width: 100%;
     height: 17%;
-    padding: 20px 30px; 
+    padding: 10px 30px; 
     box-sizing: border-box;
 }
 
@@ -43,7 +43,7 @@ h1{
 
 #cardapio{
     display: flex;
-    margin: 20px;
+    margin: 15px 20px 5px 20px;
 }
 
 .diaSemana{
@@ -87,6 +87,24 @@ h1{
 .campo_nao_resp{
     color: gray;
     font-weight:bold;
+}
+
+.legenda{
+    display: flex;
+}
+
+.qudrado-legenda{
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.item-legenda{
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+    margin-left: 10px;
 }
 
 /* MODO DARK */
