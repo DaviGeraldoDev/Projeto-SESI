@@ -62,14 +62,17 @@ h1{
 
 .campo_comer{
    color: green;
+   font-weight:bold;
 }
 
 .campo_nao_comer{
     color: red;
+    font-weight:bold;
 }
 
 .campo_nao_resp{
     color: gray;
+    font-weight:bold;
 }
 
 /* MODO DARK */
