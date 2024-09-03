@@ -1,0 +1,94 @@
+body {
+    background-image: url("/Front/src/fundo_branco.svg");
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-position: center; 
+    background-attachment: fixed; 
+    margin: 0;
+    font-family: Arial, sans-serif;
+    padding: 0;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh;
+    flex-direction: column; /* Permite que o header e a tabela sejam empilhados verticalmente */
+}
+
+header {
+    width: 100%;
+    position: absolute; /* Permite posicionar o logo no canto superior esquerdo */
+    top: 0;
+    left: 0;
+    padding: 10px; /* Adiciona algum espaço ao redor do logo */
+    box-sizing: border-box; /* Inclui padding e borda na largura total */
+}
+
+.logo-sesi {
+    max-width: 150px; /* Ajuste o tamanho máximo da imagem */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+.container-tabela {
+    width: 100%;
+    max-width: 800px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+    border: 2px solid red;
+    margin-top: 80px; /* Adiciona espaço suficiente abaixo do header para a tabela */
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.status-permitido {
+    color: green;
+}
+
+.status-bloqueado {
+    color: red;
+}
+
+.acoes {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.btn-permitir {
+    background-color: green;
+    color: white;
+    border: none;
+}
+
+.btn-bloquear {
+    background-color: red;
+    color: white;
+    border: none;
+}

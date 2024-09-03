@@ -1,9 +1,30 @@
+<<<<<<< HEAD
 function render_refeicao(refeicao, diaSemana){
     const div = document.createElement('div')
     div.setAttribute('class', 'refeicao')
     div.textContent = refeicao
     diaSemana.appendChild(div)
 }
+=======
+var JWT = window.sessionStorage.getItem('JWT');
+	if (JWT == null || JWT == ''){
+		window.location.href = "login.html";
+	}
+var xhr = new XMLHttpRequest();
+var url = "http://localhost:5000/cliente";
+xhr.open("GET", url, true);
+xhr.setRequestHeader("Content-Type", "application/json");
+xhr.setRequestHeader("Token", window.sessionStorage.getItem('JWT'));
+xhr.onload = function () {
+		if (xhr.status !== 200) {
+            alert("Token expirado, faça login novamente!");
+			window.location.href = 'login.html';
+		}
+};
+xhr.responseType="text";
+xhr.send();    
+
+>>>>>>> 99366c4292b7377ccadfab82e3da979359d6d927
 function render_cardapio(info_diaSemana) {
 
     const cardapio = document.getElementById('cardapio')
