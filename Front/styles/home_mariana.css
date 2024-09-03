@@ -31,7 +31,7 @@ p{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: relative; /* Adicionei essa linha */
+    position: relative; 
 }
 .header img {
     height: 30px;
@@ -39,9 +39,9 @@ p{
 .header h1 {
     color: rgb(255, 255, 255);
     margin: 0;
-    position: absolute; /* Adicionei essa linha */
-    left: 50%; /* Adicionei essa linha */
-    transform: translateX(-50%); /* Adicionei essa linha */
+    position: absolute; 
+    left: 50%; 
+    transform: translateX(-50%); 
 }
 
 .main_line{
