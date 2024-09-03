@@ -65,5 +65,21 @@ a {
     color: black;
 }
 
+/* Tema DARK */
+body.dark{
+    background-image: url("/Front/src/fundo_preto.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
 
+body.dark .grade-container{
+    color: white;
+}
 
+body.dark a{
+    color: white;
+}
