@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-function render_refeicao(refeicao, diaSemana){
-    const div = document.createElement('div')
-    div.setAttribute('class', 'refeicao')
-    div.textContent = refeicao
-    diaSemana.appendChild(div)
-}
-=======
 var JWT = window.sessionStorage.getItem('JWT');
 	if (JWT == null || JWT == ''){
 		window.location.href = "login.html";
@@ -24,7 +16,13 @@ xhr.onload = function () {
 xhr.responseType="text";
 xhr.send();    
 
->>>>>>> 99366c4292b7377ccadfab82e3da979359d6d927
+function render_refeicao(refeicao, diaSemana){
+    const div = document.createElement('div')
+    div.setAttribute('class', 'refeicao')
+    div.textContent = refeicao
+    diaSemana.appendChild(div)
+}
+
 function render_cardapio(info_diaSemana) {
 
     const cardapio = document.getElementById('cardapio')
@@ -77,4 +75,3 @@ refeicao.forEach(element => {
 });
 
 bt_limpar.addEventListener("click", press_bt_limpar)
-
