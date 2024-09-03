@@ -73,3 +73,22 @@ p{
     height: 150px;
     padding: 20px;
 }
+
+/* Modo DARK */
+
+body.dark{
+    background-image: url("/Front/src/fundo_preto.svg");
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+}
+
+body.dark p{
+    color: white;
+}
+
+body.dark .card{
+    background-color:black;
+}
