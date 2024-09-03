@@ -1,0 +1,7 @@
+Alunos confirmado "SIM" + Alunos confirmado "NAO" - TOTAL = Escape
+Funcionamento mínimo das paginas 
+Páginas de notificação (ADM)
+Pagina gerenciamento de acesso 
+Cadastro/Gerenciamento de aluno
+
+O bruno é vagabundo!
