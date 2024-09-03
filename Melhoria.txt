@@ -3,3 +3,5 @@ Funcionamento mínimo das paginas
 Páginas de naotificação (ADM)
 Pagina gerenciamento de acesso 
 Cadastro/Gerenciamento de aluno
+
+O bruno é vagabundo!

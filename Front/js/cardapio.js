@@ -1,4 +1,9 @@
-
+function render_refeicao(refeicao, diaSemana){
+    const div = document.createElement('div')
+    div.setAttribute('class', 'refeicao')
+    div.textContent = refeicao
+    diaSemana.appendChild(div)
+}
 function render_cardapio(info_diaSemana) {
 
     const cardapio = document.getElementById('cardapio')
@@ -8,24 +13,12 @@ function render_cardapio(info_diaSemana) {
 
     const dia = document.createElement('p')
     dia.textContent = info_diaSemana.dia
-
-    const cafe = document.createElement('div')
-    cafe.setAttribute('class', 'refeicao')
-    cafe.textContent = info_diaSemana.cafe
-
-    const almoco = document.createElement('div')
-    almoco.setAttribute('class', 'refeicao')
-    almoco.textContent = info_diaSemana.almoco
-
-    const lanche = document.createElement('div')
-    lanche.setAttribute('class', 'refeicao')
-    lanche.textContent = info_diaSemana.lanche
-
     
     diaSemana.appendChild(dia)
-    diaSemana.appendChild(cafe)
-    diaSemana.appendChild(almoco)
-    diaSemana.appendChild(lanche)
+
+    render_refeicao(info_diaSemana.cafe, diaSemana)
+    render_refeicao(info_diaSemana.almoco, diaSemana)
+    render_refeicao(info_diaSemana.lanche, diaSemana)
 
     cardapio.appendChild(diaSemana)
 
