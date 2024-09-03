@@ -76,12 +76,26 @@ h1{
 
 .campo_comer{
    color: green;
+   font-weight:bold;
 }
 
 .campo_nao_comer{
     color: red;
+    font-weight:bold;
 }
 
 .campo_nao_resp{
     color: gray;
+    font-weight:bold;
+}
+
+/* MODO DARK */
+body.dark{
+    background-image: url("/Front/src/fundo_preto.svg");
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment:fixed ;
+    margin: 0;
+    padding: 0;
 }
