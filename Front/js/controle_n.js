@@ -50,7 +50,6 @@ function render_cardapio(info_diaSemana) {
 
     const dia = document.createElement('p')
     dia.textContent = info_diaSemana.dia
-
     diaSemana.appendChild(dia)
 
     render_refeicao(info_diaSemana.cafe, diaSemana)
@@ -73,4 +72,19 @@ cardapio.forEach(info_diaSemana => {
     render_cardapio(info_diaSemana)
 });
 
+//MODO DARK
+const icon = document.getElementById("MudarTema");
+const themeIcon = document.getElementById("MudarTema");
+
+icon.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+
+    if (document.body.classList.contains("dark")) {
+        themeIcon.src = "/Front/src/sol.png";
+
+    } else {
+        themeIcon.src = "/Front/src/lua.png"; 
+        document.getElementById("calendario-icon").src = "/Front/src/calendario.png"; 
+    }
+});
 

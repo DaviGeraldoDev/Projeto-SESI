@@ -12,21 +12,21 @@ body {
     justify-content: center; 
     align-items: center; 
     height: 100vh;
-    flex-direction: column; /* Permite que o header e a tabela sejam empilhados verticalmente */
+    flex-direction: column; 
 }
 
 header {
     width: 100%;
-    position: absolute; /* Permite posicionar o logo no canto superior esquerdo */
+    position: absolute; 
     top: 0;
     left: 0;
-    padding: 10px; /* Adiciona algum espaço ao redor do logo */
-    box-sizing: border-box; /* Inclui padding e borda na largura total */
+    padding: 10px;
+    box-sizing: border-box; 
 }
 
 .logo-sesi {
-    max-width: 150px; /* Ajuste o tamanho máximo da imagem */
-    height: auto; /* Mantém a proporção da imagem */
+    max-width: 150px;
+    height: auto; 
 }
 
 .container-tabela {
@@ -37,7 +37,7 @@ header {
     padding: 20px;
     box-sizing: border-box;
     border: 2px solid red;
-    margin-top: 80px; /* Adiciona espaço suficiente abaixo do header para a tabela */
+    margin-top: 80px;
 }
 
 h2 {
