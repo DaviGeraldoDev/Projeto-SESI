@@ -79,7 +79,7 @@ h1{
 
 
 @media (max-width: 800px) {
-    .refeicao{
+    .refeicaoAtiva{
         display: flex;
         align-items: center;
         justify-content: center;
