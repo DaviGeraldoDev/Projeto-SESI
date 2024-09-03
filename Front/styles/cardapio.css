@@ -39,21 +39,24 @@ body{
     justify-content: center;
 }
 
-.refeicao{
+.refeicaoAtiva{
     display: flex;
     align-items: center;
     justify-content: center;
     width: 121px;
     height: 143px;
     padding: 10px;
-    border: solid #9d9d9d 1px;
-    font-size: 12px;
-    
-}
-.refeicaoAtiva{
     background-color: #acf74d;
     border: solid #77d500 2px;
+    font-size: 12px;
 }
+
+.refeicaoInativa{
+    background-color: white;
+    border: solid #9d9d9d 1px;
+}
+
+
 
 @media (max-width: 800px) {
     .refeicao{

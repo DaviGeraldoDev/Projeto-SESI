@@ -1,24 +1,6 @@
-var JWT = window.sessionStorage.getItem('JWT');
-	if (JWT == null || JWT == ''){
-		window.location.href = "login.html";
-	}
-var xhr = new XMLHttpRequest();
-var url = "http://localhost:5000/cliente";
-xhr.open("GET", url, true);
-xhr.setRequestHeader("Content-Type", "application/json");
-xhr.setRequestHeader("Token", window.sessionStorage.getItem('JWT'));
-xhr.onload = function () {
-		if (xhr.status !== 200) {
-            alert("Token expirado, faça login novamente!");
-			window.location.href = 'login.html';
-		}
-};
-xhr.responseType="text";
-xhr.send();    
-
 function render_refeicao(refeicao, diaSemana){
     const div = document.createElement('div')
-    div.setAttribute('class', 'refeicao')
+    div.setAttribute('class', 'refeicaoAtiva')
     div.textContent = refeicao
     diaSemana.appendChild(div)
 }
@@ -56,22 +38,30 @@ cardapio.forEach(info_diaSemana => {
 });
 
 
-const refeicao = Array.prototype.slice.call(document.getElementsByClassName("refeicao"))
+const refeicao = Array.prototype.slice.call(document.getElementsByClassName("refeicaoAtiva"))
 const bt_limpar = document.getElementById('bt_limpar')
+const bt_confirmar = document.getElementById('bt_confirmar')
 
 function press(){
-    this.classList.toggle("refeicaoAtiva")
-}
-
-function press_bt_limpar(){
-    refeicao.forEach(element => {
-        element.classList.remove("refeicaoAtiva")
-    });
-    
+    this.classList.toggle("refeicaoInativa")
 }
 
 refeicao.forEach(element => {
     element.addEventListener("click", press)
 });
 
+function press_bt_limpar(){
+    refeicao.forEach(element => {
+        element.classList.add("refeicaoInativa")
+    });
+    
+}
+
 bt_limpar.addEventListener("click", press_bt_limpar)
+
+function press_bt_confirmar(){
+    alert('As informações foram enviadas com sucesso!')
+    window.location = 'Menu.html'
+}
+
+bt_confirmar.addEventListener("click", press_bt_confirmar)
