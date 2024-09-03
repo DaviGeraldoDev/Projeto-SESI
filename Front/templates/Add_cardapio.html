@@ -159,10 +159,21 @@
         </table>
 
         <div class="button-container">
-            <button class="button">Limpar</button>
-            <button class="button">Confirmar</button>
+            <button class="button" onclick="limparCampos()">Limpar</button>
+            <button class="button" onclick="confirmar()">Confirmar</button>
         </div>
     </div>
+
+    <script>
+        function limparCampos() {
+            const inputs = document.querySelectorAll('input[type="text"]');
+            inputs.forEach(input => input.value = '');
+        }
+
+        function confirmar() {
+            alert('Dados confirmados!');
+        }
+    </script>
 
 </body>
 
