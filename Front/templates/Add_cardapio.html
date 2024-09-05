@@ -29,7 +29,8 @@
             display: flex;
             align-items: center;
             justify-content: start;
-            height: 13%;
+            height: 10%;
+            margin: 10px;
         }
 
         header img {
@@ -50,10 +51,9 @@
         }
 
         h2 {
-            margin: 0;
             font-weight: bold;
             color: #333;
-            margin-left: 375px;
+            margin-left: 385px;
         }
 
         table {
@@ -117,7 +117,9 @@
 </head>
 
 <header>
-    <img src="/Front/src/Sesi-SP.jpg">
+    <a href="/Front/templates/Home_mariana.html">
+      <img src="/Front/src/Sesi-SP.jpg">
+    </a>
     <h2>Gestão de Cardápio</h2>
 </header>
 
@@ -159,10 +161,21 @@
         </table>
 
         <div class="button-container">
-            <button class="button">Limpar</button>
-            <button class="button">Confirmar</button>
+            <button class="button" onclick="limparCampos()">Limpar</button>
+            <button class="button" onclick="confirmar()">Confirmar</button>
         </div>
     </div>
+
+    <script>
+        function limparCampos() {
+            const inputs = document.querySelectorAll('input[type="text"]');
+            inputs.forEach(input => input.value = '');
+        }
+
+        function confirmar() {
+            alert('Dados confirmados!');
+        }
+    </script>
 
 </body>
 

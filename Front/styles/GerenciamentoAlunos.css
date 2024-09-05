@@ -43,7 +43,13 @@ p{
     left: 50%; 
     transform: translateX(-50%); 
 }
-
+.est_main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
 .main_line{
     display: flex;
     justify-content: center;
@@ -74,15 +80,15 @@ p{
     padding: 20px;
 }
 
-/* Modo DARK */
-
 body.dark{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-image: url("/Front/src/fundo_preto.svg");
     background-size: cover; 
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    margin: 0;
+    background-attachment:fixed ;
 }
 
 body.dark p{
@@ -90,5 +96,5 @@ body.dark p{
 }
 
 body.dark .card{
-    background-color:black;
+    background-color: black;
 }
