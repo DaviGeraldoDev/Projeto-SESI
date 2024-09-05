@@ -13,7 +13,7 @@ $(document).ready(function() {
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4 && xhr.status === 200) {
                 window.sessionStorage.setItem('JWT',xhr.responseText);
-                window.location.href = "Menu.html";
+                window.location.href = "Home_mariana.html";
 
             }if(xhr.readyState === 4 && xhr.status === 401){
               alert("Usuário ou senha incorretos");
