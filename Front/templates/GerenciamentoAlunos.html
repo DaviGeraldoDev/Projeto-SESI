@@ -10,9 +10,11 @@
 </head>
 <body>
     <header class="header">
+        <a href="/Front/templates/Home_mariana.html">
         <img src="/Front/src/Sesi-SP.jpg" class="Logo-sesi">
+    </a>
         <h1>Controle Geral dos Alunos</h1>
-        <img src="/Front/src/lua.png" class="Lua">
+        <img src="/Front/src/lua.png" class="Lua" id="MudarTema">
     </header>
 
     <div class="est_main">
@@ -20,7 +22,7 @@
             <a href="/Front/templates/Cadastro.html">
                 <div class="est_card">
                     <div class="card">
-                        <img src="/Front/src/calendario.png" alt="cu" class="img_card">
+                        <img src="/Front/src/calendario.png" alt="calendario" class="img_card" id="calendario-icon">
                     </div>
             </a>
                     <p>Cadastro Alunos</p>
@@ -28,7 +30,7 @@
             <a href="/Front/templates/Controle_alunosN.html">
                 <div class="est_card">
                     <div class="card">
-                        <img src="/Front/src/lupa.png" alt="cu" class="img_card">
+                        <img src="/Front/src/lupa.png" alt="pesquisa" class="img_card" id="lupa-icon">
                     </div>
             </a>
                     <p>Buscar Alunos</p>
@@ -36,7 +38,7 @@
             <a href="/Front/templates/Confirmacao_alunos.html">
                 <div class="est_card">
                     <div class="card">
-                        <img src="/Front/src/telepresenca.png" alt="cu" class="img_card">
+                        <img src="/Front/src/telepresenca.png" alt="Presença" class="img_card" id="Presenca-icon">
                     </div>
             </a>
                     <p>Controle de Presença</p>
@@ -44,5 +46,5 @@
         </div>
     </div>
 </body>
-<script src="script.js"></script>
+<script src="/Front/js/GerenciamentoAluno.js"></script>
 </html>
