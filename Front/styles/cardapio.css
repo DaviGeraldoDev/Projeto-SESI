@@ -9,7 +9,6 @@ body{
     background-size: cover; 
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment:fixed ;
     margin: 0;
 }
 
@@ -96,4 +95,26 @@ h1{
         font-size: 10px;
     }
         
+}
+
+/* MODO DARK */
+
+body.dark{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url("/Front/src/fundo_preto.svg");
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+}
+
+body.dark {
+    color: white;
+}
+
+body.dark .est_cardapio{
+    color: gray;
 }
