@@ -74,25 +74,20 @@ cardapio.forEach(info_diaSemana => {
 //MODO DARK
 const icon = document.getElementById("MudarTema");
 const themeIcon = document.getElementById("MudarTema");
-const todosDias = document.querySelectorAll('.diaSemana p');
-
-function trocarCor(elementos, cor) {
-    elementos.forEach(elemento => {
-        elemento.style.color = cor;
-    });
-}
 
 icon.addEventListener("click", () => {
     document.body.classList.toggle("dark");
 
     if (document.body.classList.contains("dark")) {
         themeIcon.src = "/Front/src/sol.png";
-        trocarCor(todosDias, 'white');
+        
     } else {
         themeIcon.src = "/Front/src/lua.png";
-        trocarCor(todosDias, 'black');
+
     }
 });
+
+
 
 
 

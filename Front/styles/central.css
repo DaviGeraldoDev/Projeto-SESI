@@ -1,13 +1,14 @@
+
 body {
   font-family: Arial, sans-serif;
   background-color: #ffffff;
   margin: 0px;
-  padding: 0px;
+  padding: 10px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 90vh;
+  height: 60vh; /* Altere para ocupar a altura total */
+  flex-direction: column;
 }
 
 .header {
@@ -15,61 +16,61 @@ body {
   color: #fff;
   padding: 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center; 
   align-items: center;
   width: 100%;
-  top: 20px;
-  left: 0;
 }
 
 .logo {
+  position: absolute;
+  left: 20px;
   width: 150px;
-  border-radius: 0px; 
 }
 
-.links:hover {
+.links {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  width: 100%;
+  padding: 10px;
+}
+
+.links a {
+  text-decoration: none;
+  color: red;
+  padding: 10px;
+  border: 2px solid #ff0000;
+  border-radius: 5px;
+}
+
+.links a:hover {
   background-color: #ff0000;
   color: white;
 }
 
 .container {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 80%;
-  margin-top: 40px; 
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Altere para ocupar a largura total */
+  height: 100%; /* Adicionado para garantir que o conteúdo seja centralizado verticalmente */
 }
 
 .historico {
-  width: 40%;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  width: 50%;
-}
-
-.grid button {
-  border: 2px solid #ff0000;
+  display: flex;
+  flex-direction: column; /* Colocar conteúdo em coluna */
+  justify-content: center;
+  align-items: center;
+  width: 30%; /* Ajuste a largura conforme necessário */
+  background-color: #f9f9f9;
   padding: 20px;
-  text-align: center;
-  border-radius: 5px;
-  background-color: #fff;
-  cursor: pointer;
-}
-
-.grid button:hover {
-  background-color: #ff0000;
-  color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .inputs {
   width: 100%;
-  margin-bottom: 200px;
-  border-radius: 50px;
-
+  margin-bottom: 20px;
 }
 
 .notificacao {

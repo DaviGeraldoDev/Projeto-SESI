@@ -3,47 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="Sesi-SP.jpg">
   <link rel="stylesheet" href="central.css">
-  <title>Controle Geral dos Alunos</title>
+  <title>Central de Notificações</title>
 </head>
 <body>
 
   <div class="header">
-    <img src="Sesi-SP.jpg" alt="SESI" class="logo">
+    <img src="/src/Sesi-SP.jpg" alt="SESI" class="logo">
     <div class="titulo"><h1>Notificações</h1></div>
   </div>
 
-<div class="links"> 
-  <a href="notificacao.html">Criar Notificação +</a> <br>
-  
-  <a href="enviar.html">Enviar Notificação</a>
-</div>
-
- 
-  
+  <div class="links"> 
+    <a href="notificacao.html">Criar Notificação +</a>
+  </div>
 
   <div class="container">
     <div class="historico">
       <h2>Histórico de Notificações</h2>
       <div class="inputs">
         <div class="notificacao">Notificação: Almoço será servido às 12:20h!!</div>
-        <div class="notificacao">Notificação: Aula de culinária hoje às 11:30h!!</div>
+        <div class="notificacao">Notificação: Teremos aula de culinária hoje às 11:30!</div>
         <div class="notificacao">Notificação: Cardápio de hoje: frango grelhado!!</div>
-      </div>    </div>
-    <div class="grid">
-      <button>1º</button>
-      <button>2º</button>
-      <button>3º</button>
-      <button>4º</button>
-      <button>5º</button>
-      <button>6º</button>
-      <button>7º</button>
-      <button>8º</button>
-      <button>9º</button>
-      <button>1ºEM</button>
-      <button>2ºEM</button>
-      <button>3ºEM</button>
+      </div>
     </div>
   </div>
+
+  <script>
+    const buttons = document.querySelectorAll('.pressable');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        button.classList.toggle('pressed');
+      });
+    });
+  </script>
 </body>
 </html>

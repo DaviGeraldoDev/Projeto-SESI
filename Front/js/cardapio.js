@@ -12,25 +12,30 @@ function render_cardapio(info_diaSemana) {
     const diaSemana = document.createElement('div')
     diaSemana.setAttribute('class', 'diaSemana')
 
-    const dia = document.createElement('p')
-    dia.textContent = info_diaSemana.dia
+    const dia_semana = document.createElement('p')
+    dia_semana.textContent = info_diaSemana.dia_semana
     
-    diaSemana.appendChild(dia)
+    diaSemana.appendChild(dia_semana)
 
     render_refeicao(info_diaSemana.cafe, diaSemana)
     render_refeicao(info_diaSemana.almoco, diaSemana)
     render_refeicao(info_diaSemana.lanche, diaSemana)
+
+    const dia = document.createElement('p')
+    dia.textContent = info_diaSemana.dia
+    
+    diaSemana.appendChild(dia)
 
     cardapio.appendChild(diaSemana)
 
 }
 
 const cardapio = [
-    {dia: 'seg', cafe: 'Pão de leite; Pão de leite; Pão de leite;', almoco: 'Pão de leite', lanche: 'Pão de leite'},
-    {dia: 'ter', cafe: 'Pão de leite', almoco: 'Pão de leite', lanche: 'Pão de leite'},
-    {dia: 'qua', cafe: 'Pão de leite', almoco: 'Pão de leite', lanche: 'Pão de leite'},
-    {dia: 'qui', cafe: 'Pão de leite', almoco: 'Pão de leite', lanche: 'Pão de leite'},
-    {dia: 'sex', cafe: 'Pão de leite', almoco: 'Pão de leite', lanche: 'Pão de leite'},
+    {dia: '02/09', dia_semana: 'Seg', cafe: 'Pão de leite; Pão de leite; Pão de leite;', almoco: 'Pão de leite', lanche: 'Pão de leite'},
+    {dia: '03/09', dia_semana: 'Ter', cafe: 'Pão de leite', almoco: 'Pão de leite', lanche: 'Pão de leite'},
+    {dia: '04/09', dia_semana: 'Qua', cafe: 'Pão de leite', almoco: 'Pão de leite', lanche: 'Pão de leite'},
+    {dia: '05/09', dia_semana: 'Qui', cafe: 'Pão de leite', almoco: 'Pão de leite', lanche: 'Pão de leite'},
+    {dia: '06/09', dia_semana: 'Sex', cafe: 'Pão de leite', almoco: 'Pão de leite', lanche: 'Pão de leite'},
 ]
 
 cardapio.forEach(info_diaSemana => {
@@ -65,3 +70,20 @@ function press_bt_confirmar(){
 }
 
 bt_confirmar.addEventListener("click", press_bt_confirmar)
+
+//MODO DARK
+const icon = document.getElementById("MudarTema");
+const themeIcon = document.getElementById("MudarTema");
+
+icon.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+
+    if (document.body.classList.contains("dark")) {
+        themeIcon.src = "/Front/src/sol.png";
+
+    } else {
+        themeIcon.src = "/Front/src/lua.png";
+
+
+    }
+});

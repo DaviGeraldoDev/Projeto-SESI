@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/Front/styles/home_mariana.css">
+    <link rel="icon" href="/Front/src/logo_barra.png">
     <title>Menu ADM</title>
 </head>
 <body>
     <header class="header">
-        <img src="/Front/src/Sesi-SP.jpg" alt="Logo">
+        <img src="/Front/src/Sesi-SP.jpg" class="Logo-sesi">
         <h1>Controle Geral dos Alunos</h1>
-        <img src="/Front/src/lua.png" alt="Logo">
+        <img src="/Front/src/lua.png" class="MudarTema"  class="Lua" id="MudarTema">
     </header>
 
     <div class="est_main">
@@ -19,7 +20,7 @@
             <a href="/Front/templates/Add_cardapio.html">
                 <div class="est_card">
                     <div class="card">
-                        <img src="/Front/src/calendario.png" alt="cu" class="img_card">
+                        <img src="/Front/src/calendario.png" alt="calendario" class="img_card" id="calendario-icon">
                     </div>
             </a>
                     <p>Cardápio</p>
@@ -27,7 +28,7 @@
             <a href="/Front/templates/Controle_alunosN.html">
                 <div class="est_card">
                     <div class="card">
-                        <img src="/Front/src/grafico-de-barras.png" alt="cu" class="img_card">
+                        <img src="/Front/src/grafico-de-barras-preto.png" alt="grafico" class="img_card" id="grafico-icon">
                     </div>
             </a>
                     <p>Controle Geral</p>
@@ -35,7 +36,7 @@
             <a href="">
                 <div class="est_card">
                     <div class="card">
-                        <img src="/Front/src/notificacoes.png" alt="cu" class="img_card">
+                        <img src="/Front/src/aviso.png" alt="notificacoes" class="img_card" id="aviso-icon">
                     </div>
             </a>
                     <p>Notificações</p>
@@ -45,15 +46,15 @@
             <a href="central.html">
                 <div class="est_card">
                     <div class="card">
-                        <img src="/Front/src/grafico-de-barras.png" alt="cu" class="img_card">
+                        <img src="/Front/src/aluno.png" alt="aluno" class="img_card" id="aluno-icon">
                     </div>
             </a>
                     <p>Gerenciamento de alunos</p>
                 </div>
-            <a href="">
+            <a href="/Front/templates/GerenciamentoAcesso.html">
                 <div class="est_card">
                     <div class="card">
-                        <img src="/Front/src/desbloquear.png" alt="cu" class="img_card">
+                        <img src="/Front/src/desbloquear.png" alt="" class="img_card"  id="notificacao-icon">
                     </div>
             </a>
                     <p>Gerenciamento de acesso</p>
@@ -61,7 +62,7 @@
             <a href="">
                 <div class="est_card">
                     <div class="card">
-                        <img src="/Front/src/desbloquear.png" alt="cu" class="img_card">
+                        <img src="/Front/src/calendario.png" alt="cu" class="img_card" id="carlos-icon">
                     </div>
             </a>
                     <p>Carlos</p>
@@ -69,5 +70,5 @@
         </div>
     </div>
 </body>
-<script src="script.js"></script>
+<script src="/Front/js/Home_mariana.js"></script>
 </html>

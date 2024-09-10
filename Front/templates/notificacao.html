@@ -1,14 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="notificacao.css">
-    <title>Gerar Notificação</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="Sesi-SP.jpg">
+  <link rel="stylesheet" href="notificacao.css">
+  <title>Criar Notificação</title>
+  <style>
+    .botao {
+      padding: 10px 20px;
+      border: 1px solid #ccc;
+      background-color: #f0f0f0;
+      cursor: pointer;
+    }
+    .selecionado {
+      background-color: #ff0000 !important;
+      color: white !important;
+    }
+  </style>
 </head>
 <body>
-    <div class="cotainer">
 
+  <div class="header">
+    <img src="/src/Sesi-SP.jpg" alt="SESI" class="logo">
+    <div class="titulo"><h1>Criar Notificação</h1></div>
+  </div>
+
+  <div class="links"> 
+    <a href="central.html">Enviar Notificação</a>
+  </div>
+  
+  <input type="text" class="input-box" placeholder="Digite aqui...">
+  <div class="grid">
+      <button class="pressable botao">1º</button>
+      <button class="pressable botao">2º</button>
+      <button class="pressable botao">3º</button>
+      <button class="pressable botao">4º</button>
+      <button class="pressable botao">5º</button>
+      <button class="pressable botao">6º</button>
+      <button class="pressable botao">7º</button>
+      <button class="pressable botao">8º</button>
+      <button class="pressable botao">9º</button>
+      <button class="pressable botao">1ºEM</button>
+      <button class="pressable botao">2ºEM</button>
+      <button class="pressable botao">3ºEM</button>
     </div>
+
+  <script>
+    document.querySelectorAll('.botao').forEach(button => {
+      button.addEventListener('click', function() {
+        this.classList.toggle('selecionado');
+      });
+    });
+  </script>
 </body>
 </html>

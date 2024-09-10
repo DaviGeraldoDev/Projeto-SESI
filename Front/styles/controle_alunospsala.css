@@ -13,26 +13,19 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 100%;
+    height: 17%;
     padding: 20px 30px; 
     box-sizing: border-box;
+}
+header img {
+    height: 60px;
 }
 
 main{
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.Sesi-page {
-    width: 150px;
-    height: 50px;
-    align-items: center;
-    justify-items: center;
-}
-
-.Lua {
-    width: 60px;
-    height: 60px;
 }
 
 h1{
@@ -67,5 +60,26 @@ h1{
     font-weight: bold;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
 
+/* Tema DARK */
+body.dark{
+    background-image: url("/Front/src/fundo_preto.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
 
+body.dark .grade-container{
+    color: white;
+}
+
+body.dark a{
+    color: white;
+}

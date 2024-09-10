@@ -16,20 +16,34 @@ main{
 }
 
 .header{
+    background: linear-gradient(to right, #FAFAFA, #FF0000, #FF0000);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(to right, #FAFAFA, #FF0000);
-    padding: 15px;
+    max-width: 100%;
+    height: 17%;
+    padding: 10px 30px; 
+    box-sizing: border-box;
+}
+
+.Sesi-page {
+    width: 150px;
+    height: 50px;
+}
+
+.Lua {
+    height: 60px;
+    width: auto; 
 }
 
 h1{
     margin-right: 80px;
+    color: #FAFAFA;
 }
 
 #cardapio{
     display: flex;
-    margin: 20px;
+    margin: 15px 20px 5px 20px;
 }
 
 .diaSemana{
@@ -75,6 +89,24 @@ h1{
     font-weight:bold;
 }
 
+.legenda{
+    display: flex;
+}
+
+.qudrado-legenda{
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.item-legenda{
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+    margin-left: 10px;
+}
+
 /* MODO DARK */
 body.dark{
     background-image: url("/Front/src/fundo_preto.svg");
@@ -84,4 +116,8 @@ body.dark{
     background-attachment:fixed ;
     margin: 0;
     padding: 0;
+}
+
+body.dark p{
+    color: white;
 }
