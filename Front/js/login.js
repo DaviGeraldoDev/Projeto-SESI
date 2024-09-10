@@ -14,7 +14,7 @@ $(document).ready(function() {
             if (xhr.readyState === 4 && xhr.status === 200) {
                 if (login == "Mariane Nutri"){
                     window.sessionStorage.setItem('JWT',xhr.responseText);
-                    window.location.href = "Home_mariane.html";
+                    window.location.href = "Home_mariana.html";
                 }
 
                 else{
