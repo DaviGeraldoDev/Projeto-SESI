@@ -1,26 +1,24 @@
-//MODO DARK
+// //MODO DARK
 const icon = document.getElementById("MudarTema");
 const themeIcon = document.getElementById("MudarTema");
 
+const icons = [
+    { id: "calendario-icon", light: "/Front/src/calendario.png", dark: "/Front/src/calenBranco.png" },
+    { id: "grafico-icon", light: "/Front/src/grafico-de-barras-preto.png", dark: "/Front/src/grafico-de-barrasBranco.png" },
+    { id: "notificacao-icon", light: "/Front/src/desbloquear.png", dark: "/Front/src/notficacaoBranca.png" },
+    { id: "aluno-icon", light: "/Front/src/aluno.png", dark: "/Front/src/alunobranco.png" },
+    { id: "aviso-icon", light: "/Front/src/aviso.png", dark: "/Front/src/avisoBranco.png" },
+    { id: "mais-icon", light: "/Front/src/Mais-Preto.png", dark: "/Front/src/Mais-Branca.png" }
+];
+
 icon.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
+    const isDark = document.body.classList.toggle("dark");
 
-    if (document.body.classList.contains("dark")) {
-        themeIcon.src = "/Front/src/sol.png";
-        document.getElementById("calendario-icon").src = "/Front/src/calenBranco.png";
-        document.getElementById("grafico-icon").src = "/Front/src/grafico-de-barrasBranco.png";
-        document.getElementById("notificacao-icon").src = "/Front/src/notficacaoBranca.png";
-        document.getElementById("carlos-icon").src = "/Front/src/calenBranco.png";
-        document.getElementById("aluno-icon").src = "/Front/src/alunobranco.png";
-        document.getElementById("aviso-icon").src = "/Front/src/avisoBranco.png";  
-    } else {
-        themeIcon.src = "/Front/src/lua.png";
-        document.getElementById("calendario-icon").src = "/Front/src/calendario.png";
-        document.getElementById("grafico-icon").src = "/Front/src/grafico-de-barras-preto.png";
-        document.getElementById("notificacao-icon").src = "/Front/src/desbloquear.png";
-        document.getElementById("carlos-icon").src = "/Front/src/calendario.png";
-        document.getElementById("aluno-icon").src = "/Front/src/aluno.png";
-        document.getElementById("aviso-icon").src = "/Front/src/aviso.png"; 
+    // Muda o ícone do tema
+    themeIcon.src = isDark ? "/Front/src/sol.png" : "/Front/src/lua.png";
 
-    }
+    // Atualiza todos os ícones com base no tema
+    icons.forEach(({ id, light, dark }) => {
+        document.getElementById(id).src = isDark ? dark : light;
+    });
 });

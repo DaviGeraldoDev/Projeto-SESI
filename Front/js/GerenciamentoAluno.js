@@ -1,24 +1,19 @@
 //MODO DARK
 const icon = document.getElementById("MudarTema");
 const themeIcon = document.getElementById("MudarTema");
-
-icon.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-
-    if (document.body.classList.contains("dark")) {
-        themeIcon.src = "/Front/src/sol.png";
-        document.getElementById("cadastro-icon").src = "/Front/src/cadastroBranco.png";
-        document.getElementById("lupa-icon").src = "/Front/src/lupaBranca.png";
-        document.getElementById("Presenca-icon").src = "/Front/src/telepresencaBranca.png";
+const icons = [
+    {id: "cadastro-icon", light:"/Front/src/cadastro.png" , dark:"/Front/src/cadastroBranco.png"},
+    {id: "lupa-icon", light:"/Front/src/lupa.png" , dark:"/Front/src/lupaBranca.png"},
+    {id: "Presenca-icon", light:"/Front/src/telepresenca.png" , dark:"/Front/src/telepresencaBranca.png"}
+]
 
 
+icon.addEventListener("click", () =>{
+    const isDark = document.body.classList.toggle("dark");
 
+    themeIcon.src = isDark ? "/Front/src/sol.png" : "/Front/src/lua.png";
 
-    } else {
-        themeIcon.src = "/Front/src/lua.png";
-        document.getElementById("cadastro-icon").src = "/Front/src/cadastro.png";
-        document.getElementById("lupa-icon").src = "/Front/src/lupa.png";
-        document.getElementById("Presenca-icon").src = "/Front/src/telepresenca.png";
-
-    }
-});
+    icons.forEach(({id, light, dark})=>{
+        document.getElementById(id).src = isDark ? dark : light;
+    })
+})

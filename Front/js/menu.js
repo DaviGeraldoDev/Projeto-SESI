@@ -20,24 +20,18 @@ const themeIcon = document.getElementById("MudarTema");
  xhr.responseType="text";
  xhr.send();    
 
-//Trocar de tema
-icon.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
+//TEMA DARK
+const icons = [
+    {id: "config-icon", light:"/Front/src/Configuracao-Preta (1).png" , dark:"/Front/src/Configuracao-Branca.png"},
+    {id: "cardapio-icon", light:"/Front/src/cardapio.png" , dark:"/Front/src/cardapBranco.png"},
+    {id: "notificacao-icon", light:"/Front/src/sinoBranco.png" , dark:"/Front/src/notificacao.png"}
+]
 
-    if (document.body.classList.contains("dark")) {
-        themeIcon.src = "/Front/src/sol.png";
-        document.getElementById("config-icon").src = "/Front/src/Configuracao-Branca.png"; 
-        document.getElementById("cardapio-icon").src = "/Front/src/cardapBranco.png"; 
-        document.querySelectorAll(".notificacao-icon").forEach(icon => {
-            icon.src = "/Front/src/sinoBranco.png"; 
-        });
+icon.addEventListener("click",()=>{
+    const isDark = document.body.classList.toggle("dark");
+    themeIcon.src = isDark ? "/Front/src/sol.png" : "/Front/src/lua.png";
 
-    } else {
-        themeIcon.src = "/Front/src/lua.png"; 
-        document.getElementById("config-icon").src = "/Front/src/Configuracao-Preta (1).png"; 
-        document.getElementById("cardapio-icon").src = "/Front/src/cardapio.png"; 
-        document.querySelectorAll(".notificacao-icon").forEach(icon => {
-        icon.src = "/Front/src/notificacao.png";
-        });
-    }
-});
+    icons.forEach(({id, light, dark})=>{
+        document.getElementById(id).src = isDark ? dark : light;
+    })
+})
