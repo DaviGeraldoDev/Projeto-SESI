@@ -1,21 +1,35 @@
+
 body {
   font-family: Arial, sans-serif;
   background-color: #ffffff;
+<<<<<<< HEAD
+  margin: 0px;
+  padding: 10px;
+=======
   margin: 0;
   padding: 0;
+>>>>>>> db457764e033c3b58091dd47029df34d70a31030
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+<<<<<<< HEAD
+  height: 60vh; /* Altere para ocupar a altura total */
+  flex-direction: column;
+=======
   height: 84vh;
+>>>>>>> db457764e033c3b58091dd47029df34d70a31030
 }
 
 .header {
   background-color: #ff0000;
   color: #fff;
-  padding: 25px;
+  padding: 20px;
   display: flex;
   justify-content: center; 
+<<<<<<< HEAD
+  align-items: center;
+  width: 100%;
+=======
   align-items: center;
   width: 100%;
 }
@@ -36,11 +50,13 @@ body {
 
 .header img{
   margin-left: 20px;
+>>>>>>> db457764e033c3b58091dd47029df34d70a31030
 }
 
 .logo {
+  position: absolute;
+  left: 20px;
   width: 150px;
-  border-radius: 0px; 
 }
 
 .links {
@@ -49,8 +65,11 @@ body {
   gap: 10px;
   width: 100%;
   padding: 10px;
+<<<<<<< HEAD
+=======
   margin-left: 20px;
   margin-top: 10px;
+>>>>>>> db457764e033c3b58091dd47029df34d70a31030
 }
 
 .links a {
@@ -68,41 +87,34 @@ body {
 
 .container {
   display: flex;
+<<<<<<< HEAD
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Altere para ocupar a largura total */
+  height: 100%; /* Adicionado para garantir que o conteúdo seja centralizado verticalmente */
+=======
   justify-content: space-between;
   align-items: flex-start;
   width: 80%;
   margin-top: 90px; 
+>>>>>>> db457764e033c3b58091dd47029df34d70a31030
 }
 
 .historico {
-  width: 40%;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  width: 50%;
-}
-
-.grid button {
-  border: 2px solid #ff0000;
+  display: flex;
+  flex-direction: column; /* Colocar conteúdo em coluna */
+  justify-content: center;
+  align-items: center;
+  width: 30%; /* Ajuste a largura conforme necessário */
+  background-color: #f9f9f9;
   padding: 20px;
-  text-align: center;
-  border-radius: 5px;
-  background-color: #fff;
-  cursor: pointer;
-}
-
-.grid button:hover {
-  background-color: #ff0000;
-  color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .inputs {
   width: 100%;
-  margin-bottom: 200px;
-  border-radius: 50px;
+  margin-bottom: 20px;
 }
 
 .notificacao {
