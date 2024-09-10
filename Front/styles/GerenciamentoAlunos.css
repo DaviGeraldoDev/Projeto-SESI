@@ -79,3 +79,22 @@ p{
     height: 150px;
     padding: 20px;
 }
+
+body.dark{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("/Front/src/fundo_preto.svg");
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment:fixed ;
+}
+
+body.dark p{
+    color: white;
+}
+
+body.dark .card{
+    background-color: black;
+}

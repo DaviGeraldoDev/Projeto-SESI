@@ -43,6 +43,8 @@ h1{
 
 #cardapio{
     display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 15px 20px 5px 20px;
 }
 
@@ -62,6 +64,16 @@ h1{
     height: 140px;
     padding: 12px;
     border: solid #9d9d9d 1px;
+    font-size: 20px;
+}
+
+.refeicao_head{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 121px;
+    height: 143px;
+    padding: 10px;
     font-size: 20px;
 }
 
@@ -91,6 +103,9 @@ h1{
 
 .legenda{
     display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 121px;
 }
 
 .qudrado-legenda{
@@ -119,5 +134,9 @@ body.dark{
 }
 
 body.dark p{
+    color: white;
+}
+
+body.dark .refeicao_head{
     color: white;
 }
