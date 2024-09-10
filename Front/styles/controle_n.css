@@ -136,3 +136,7 @@ body.dark{
 body.dark p{
     color: white;
 }
+
+body.dark .refeicao_head{
+    color: white;
+}
