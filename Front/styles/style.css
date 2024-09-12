@@ -64,3 +64,34 @@ input {
     border: 2px solid gray;
     outline: none;
 }
+
+body.dark {
+    background-image: url("/Front/src/fundo_preto.svg");
+    background-color: #1E1E1E;
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    list-style: none;
+}
+
+body.dark h1 {
+    color: #000000;
+}
+
+body.dark input {
+    border: 2px solid #000000;
+    color: #E0E0E0;
+}
+
+body.dark .div-input {
+    background-color:rgb(255, 255, 255);
+}
+
+body.dark .Img-perfil {
+    width: 150px;
+    height: 150px;
+    align-items:center;
+    margin: 14px;
+}
