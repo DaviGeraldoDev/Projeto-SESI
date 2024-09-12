@@ -25,6 +25,7 @@ body {
   position: absolute;
   left: 20px;
   width: 150px;
+  margin-top: -20px;
 }
 
 .links {

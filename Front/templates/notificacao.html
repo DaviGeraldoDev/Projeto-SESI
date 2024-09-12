@@ -22,7 +22,9 @@
 <body>
 
   <div class="header">
-    <img src="/Front/src/Sesi-SP.jpg" alt="SESI" class="logo">
+    <a href="/Front/templates/central.html">
+      <img src="/Front/src/Sesi-SP.jpg" alt="SESI" class="logo">
+    </a>
     <div class="titulo"><h1>Criar Notificação</h1></div>
   </div>
 
@@ -50,6 +52,12 @@
     document.querySelectorAll('.botao').forEach(button => {
       button.addEventListener('click', function() {
         this.classList.toggle('selecionado');
+      });
+    });
+
+    document.querySelectorAll('.links').forEach(button => {
+      button.addEventListener('click', function() {
+        alert('Notificação Enviada!');
       });
     });
   </script>
