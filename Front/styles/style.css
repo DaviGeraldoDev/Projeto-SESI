@@ -34,9 +34,8 @@ h1{
 .Img-perfil {
     width: 150px;
     height: 150px;
-    align-items: center;
-    border-radius: 120px;
-    margin: 20px;
+    align-items:center;
+    margin: 14px;
 }
 
 .div-input {
@@ -50,18 +49,18 @@ h1{
     padding: 45px;
     border-radius: 8px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
-    margin-top: 22px;
+    margin-top: 10px;
 }
 
 input {
     width: 250px;
-    height: 30px;
+    height: 28px;
     margin: 5px;
     margin-bottom: 10px;
     align-items: center;
     justify-content: center;
-    border-radius: 7.5px;
-    box-shadow: 0 8px 14px rgba(0, 0, 0, 0.9);
-    border: 30px;
+    border-radius: 8px;
+    padding: 6px;
+    border: 2px solid gray;
     outline: none;
 }
