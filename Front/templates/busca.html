@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/Front/src/Sesi-SP.jpg">
+  <link rel="stylesheet" href="/Front/styles/busca.css">
+  <title>Central de Notificações</title>
+</head>
+<body>
+
+    <div class="header">
+      <a href="GerenciamentoAlunos.html">
+        <img src="/Front/src/Sesi-SP.jpg" alt="SESI" class="logo">
+      </a>
+        <div class="titulo"><h1>Buscar Aluno</h1></div>
+      </div>
+
+  <div class="container">
+    <div class="historico">
+      <h2>Buscar</h2>
+      <input type="search">
+      <div class="links"> 
+        <a href="" class="botao-centro">Buscar aluno</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const buttons = document.querySelectorAll('.pressable');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        button.classList.toggle('pressed');
+      });
+    });
+  </script>
+</body>
+</html>
