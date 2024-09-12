@@ -1,6 +1,6 @@
 import pyodbc
 from seg_senha import encrypt_md5
-"SESI123"
+"Mariane Nutri" "SESI123"
 
 #Conexão com o Banco de dados
 cnxn = pyodbc.connect('DRIVER={SQL Server};SERVER=DESKTOP-P0GRB9M\SQLEXPRESS;DATABASE=Teste_jwt')
