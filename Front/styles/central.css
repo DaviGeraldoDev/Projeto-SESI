@@ -2,22 +2,13 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #ffffff;
-<<<<<<< HEAD
   margin: 0px;
   padding: 10px;
-=======
-  margin: 0;
-  padding: 0;
->>>>>>> db457764e033c3b58091dd47029df34d70a31030
   display: flex;
   justify-content: center;
   align-items: center;
-<<<<<<< HEAD
   height: 60vh; /* Altere para ocupar a altura total */
   flex-direction: column;
-=======
-  height: 84vh;
->>>>>>> db457764e033c3b58091dd47029df34d70a31030
 }
 
 .header {
@@ -26,10 +17,6 @@ body {
   padding: 20px;
   display: flex;
   justify-content: center; 
-<<<<<<< HEAD
-  align-items: center;
-  width: 100%;
-=======
   align-items: center;
   width: 100%;
 }
@@ -38,25 +25,7 @@ body {
   position: absolute;
   left: 20px;
   width: 150px;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  margin-top: 20px;
-}
-
-.header h1{
-  margin-right: 30px;
-}
-
-.header img{
-  margin-left: 20px;
->>>>>>> db457764e033c3b58091dd47029df34d70a31030
-}
-
-.logo {
-  position: absolute;
-  left: 20px;
-  width: 150px;
+  margin-top: -20px;
 }
 
 .links {
@@ -65,11 +34,6 @@ body {
   gap: 10px;
   width: 100%;
   padding: 10px;
-<<<<<<< HEAD
-=======
-  margin-left: 20px;
-  margin-top: 10px;
->>>>>>> db457764e033c3b58091dd47029df34d70a31030
 }
 
 .links a {
@@ -87,17 +51,10 @@ body {
 
 .container {
   display: flex;
-<<<<<<< HEAD
   justify-content: center;
   align-items: center;
   width: 100%; /* Altere para ocupar a largura total */
   height: 100%; /* Adicionado para garantir que o conteúdo seja centralizado verticalmente */
-=======
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 80%;
-  margin-top: 90px; 
->>>>>>> db457764e033c3b58091dd47029df34d70a31030
 }
 
 .historico {

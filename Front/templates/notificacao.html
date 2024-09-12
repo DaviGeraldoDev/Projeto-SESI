@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="Sesi-SP.jpg">
-  <link rel="stylesheet" href="notificacao.css">
+  <link rel="icon" href="/Front/src/Sesi-SP.jpg">
+  <link rel="stylesheet" href="/Front/styles/notificacao.css">
   <title>Criar Notificação</title>
   <style>
     .botao {
@@ -22,12 +22,14 @@
 <body>
 
   <div class="header">
-    <img src="/src/Sesi-SP.jpg" alt="SESI" class="logo">
+    <a href="/Front/templates/central.html">
+      <img src="/Front/src/Sesi-SP.jpg" alt="SESI" class="logo">
+    </a>
     <div class="titulo"><h1>Criar Notificação</h1></div>
   </div>
 
   <div class="links"> 
-    <a href="central.html">Enviar Notificação</a>
+    <a href="/Front/templates/central.html">Enviar Notificação</a>
   </div>
   
   <input type="text" class="input-box" placeholder="Digite aqui...">
@@ -52,9 +54,16 @@
         this.classList.toggle('selecionado');
       });
     });
+
+    document.querySelectorAll('.links').forEach(button => {
+      button.addEventListener('click', function() {
+        alert('Notificação Enviada!');
+      });
+    });
   </script>
 </body>
 </html>
+<<<<<<< HEAD
 <html lang="pt">
 <head>
 <meta charset="UTF-8">
@@ -80,3 +89,5 @@
 </body>
 </html>
 
+=======
+>>>>>>> a00d31f8117585703afcc2bc0aba1c1bfee0b9d6
