@@ -1,12 +1,12 @@
 document.getElementById('filtro').addEventListener('change', function() {
-    var value = this.value;
-    var rows = document.querySelectorAll('tbody tr');
+    var valor = this.value;
+    var linhas = document.querySelectorAll('tbody tr');
     
-    rows.forEach(function(row) {
-        if (value === "" || row.classList.contains('categoria-' + value)) {
-            row.style.display = '';
+    linhas.forEach(function(linha) {
+        if (valor === "" || linha.classList.contains('categoria-' + valor)) {
+            linha.style.display = '';
         } else {
-            row.style.display = 'none';
+            linha.style.display = 'none';
         }
     });
 });
