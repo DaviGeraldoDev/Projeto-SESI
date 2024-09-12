@@ -20,11 +20,12 @@ body {
     width: 100%;
   }
   
-  .logo {
+.logo {
     position: absolute;
     left: 20px;
     width: 150px;
-  }
+    margin-top: -20px;
+}
   
 .container {
     display: flex;
