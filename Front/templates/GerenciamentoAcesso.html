@@ -23,6 +23,16 @@
             <option value="B">B</option>
             <option value="C">C</option>
         </select>
+        <div class="dia">
+            <label for="dia">Dias da Semana:</label>
+            <select id="dia">
+                <option value="Segunda-Feria">Segunda-Feria</option>
+                <option value="Terça-Feira">Terça-Feira</option>
+                <option value="Quarta-Feira">Quarta-Feira</option>
+                <option value="Quinta-Feira">Quinta-Feira</option>
+                <option value="Sexta-Feira">Sexta-Feira</option>
+            </select>
+        </div>
     </div>
     <table>
         <thead>
@@ -37,7 +47,7 @@
             <tr class="categoria-A ">
                 <td>3°EM</td>
                 <td>
-                    <input type="checkbox">
+                    <input type="checkbox" id="checkbox">
                 </td>
                 <td>
                     <input type="checkbox">
@@ -96,6 +106,8 @@
             </tr>
         </tbody>
     </table>
+    <button type="submit" onclick="apagarEscolha()">Limpar</button>
+    <button type="submit" onclick="alert('Informações Salvas')">Salvar</button>
 </div>
 
 <script src="/Front/js/GerenciamentoAcesso.js"></script>

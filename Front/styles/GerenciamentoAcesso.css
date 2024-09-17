@@ -62,6 +62,15 @@ table {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
 }
 
+dia{
+    margin-bottom: 20px;
+    gap: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
 select{
     padding: 8px;
     border: 1px solid #ccc;
@@ -82,3 +91,19 @@ th, td {
 th {
     background-color: #f2f2f2;
 }
+
+
+    button {
+        padding: 10px 20px;
+        border-radius: 15px;
+        line-height: 1.25;
+        background: #ff2a00;
+        text-decoration: none;
+        user-select: none;
+        color: white;
+        font-size: 16px;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        position: relative;
+        margin-top: 20px;
+      }

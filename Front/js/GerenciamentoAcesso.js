@@ -10,3 +10,12 @@ document.getElementById('filtro').addEventListener('change', function() {
         }
     });
 });
+
+function apagarEscolha() {
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach((checkbox) => {
+        checkbox.checked = false;
+    });
+}
+
+
