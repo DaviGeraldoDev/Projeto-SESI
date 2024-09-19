@@ -1,105 +1,150 @@
-html,
-body {
-    margin: 0;
-    padding: 0;
-}
 
-body {
-    background-image: url("/Front/src/fundo_branco.svg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    font-family: Arial, sans-serif;
+
+body{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    background-image: url("/Front/src/fundo_branco.svg");
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
 }
 
-header {
-    width: 100%;
+h1{
+    text-align: center;
+    align-items: center;
+    font-size: 40px;
+    color: #FAFAFA;
+    margin-right: 70px;
+}
+
+.header {
+    background: linear-gradient(to right, #FAFAFA, #FF0000, #FF0000);
     display: flex;
     align-items: center;
-    justify-content: start;
-    height: 10%;
-    margin: 10px;
-}
-
-header img {
-    margin: 30px;
-    margin-left: 80px;
-    width: 170px;
-    height: 60px;
-}
-
-#container {
-    background-color: #ffffff;
-    border: 5px solid #FF0000;
-    border-radius: 15px;
-    padding: 20px 50px;
-    padding-top: 40px;
-    width: 600px;
-    position: relative;
-}
-
-h2 {
-    font-weight: bold;
-    color: #333;
-    margin-left: 385px;
-}
-
-table {
+    justify-content: space-between;
     width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-}
-
-th,
-td {
-    padding: 10px;
-    text-align: center;
-    height: 80px;
-}
-
-th {
-    background-color: #ddd;
-    font-weight: bold;
-}
-
-td {
-    border: 2px solid #ddd;
-}
-
-input[type="text"] {
-    text-align: center;
-    width: 100%;
-    height: 100%;
-    padding: 7%;
-    border: 0px solid #ddd;
-    border-radius: 6px;
+    height: 30%;
+    padding: 40px; 
     box-sizing: border-box;
-    font-size: 13px;
 }
 
-.button-container {
+.header img {
+    height: 60px;
+    width: auto;
+}
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.est_cardapio{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    margin: 20px;
+    padding: 10px;
+    border: solid red 5px;
+    border-radius: 25px;    
 }
 
-.button {
-    background-color: #FF0000;
+#cardapio{
+    display: flex;
+    margin: 20px;
+    
+}
+
+.diaSemana{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.refeicao_head{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 120px;
+    padding: 10px;
+    background-color: white;
+    font-size: 12px;
+}
+
+.refeicao{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 120px;
+    padding: 10px;
+    background-color: white;
+    border: solid #9d9d9d 1px;
+    font-size: 12px;
+}
+
+
+
+@media (max-width: 800px) {
+    .refeicaoAtiva{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 75px;
+        height: 90px;
+        padding: 10px;
+        border: solid #9d9d9d 1px;
+        font-size: 10px;
+        
+    }
+
+    .refeicao{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 75px;
+        height: 90px;
+        padding: 10px;
+        font-size: 10px;
+    }
+
+    #cardapio{
+        display: flex;
+        margin: 20px;
+        padding-right: 75px;
+    }
+
+    p{
+        font-size: 10px;
+    }
+        
+}
+
+/* MODO DARK */
+
+body.dark{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url("/Front/src/fundo_preto.svg");
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+}
+
+body.dark {
     color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 16px;
-    width: 40%;
-    margin: 5px 0;
 }
 
-img {
-    width: 120px;
+body.dark .est_cardapio{
+    color: gray;
 }
