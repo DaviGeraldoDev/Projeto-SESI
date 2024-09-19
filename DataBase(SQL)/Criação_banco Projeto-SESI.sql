@@ -1,3 +1,5 @@
+CREATE DATABASE Projeto_SESI
+
 CREATE TABLE users(
     rm_usuario int primary key,
     senha_usuario varchar(100) not null,
