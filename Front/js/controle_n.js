@@ -28,9 +28,14 @@ function render_campo(info_comer,  refeicao){
     nao_resp.setAttribute('class', 'campo_nao_resp')
     nao_resp.textContent = info_comer[2]
 
+    const dieta_esp = document.createElement('div')
+    dieta_esp.setAttribute('class', 'campo_dieta_esp')
+    dieta_esp.textContent = info_comer[3]
+
     refeicao.appendChild(comer)
     refeicao.appendChild(nao_comer)
     refeicao.appendChild(nao_resp)
+    refeicao.appendChild(dieta_esp)
 }
 
 function render_refeicao(refeicao, diaSemana){
@@ -60,11 +65,11 @@ function render_cardapio(info_diaSemana) {
 }
 
 const cardapio = [
-    {dia: 'Seg', cafe: ['700','50','100'], almoco: ['700','50','100'], lanche: ['700','50','100']},
-    {dia: 'Ter', cafe: ['700','50','100'], almoco: ['700','50','100'], lanche: ['700','50','100']},
-    {dia: 'Qua', cafe: ['700','50','100'], almoco: ['700','50','100'], lanche: ['700','50','100']},
-    {dia: 'Qui', cafe: ['700','50','100'], almoco: ['700','50','100'], lanche: ['700','50','100']},
-    {dia: 'Sex', cafe: ['700','50','100'], almoco: ['700','50','100'], lanche: ['700','50','100']},
+    {dia: 'Seg', cafe: ['700','50','100','2'], almoco: ['700','50','100','2'], lanche: ['700','50','100','2']},
+    {dia: 'Ter', cafe: ['700','50','100','2'], almoco: ['700','50','100','2'], lanche: ['700','50','100','2']},
+    {dia: 'Qua', cafe: ['700','50','100','2'], almoco: ['700','50','100','2'], lanche: ['700','50','100','2']},
+    {dia: 'Qui', cafe: ['700','50','100','2'], almoco: ['700','50','100','2'], lanche: ['700','50','100','2']},
+    {dia: 'Sex', cafe: ['700','50','100','2'], almoco: ['700','50','100','2'], lanche: ['700','50','100','2']},
 ]
 
 cardapio.forEach(info_diaSemana => {

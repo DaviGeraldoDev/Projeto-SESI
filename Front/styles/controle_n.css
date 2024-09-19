@@ -101,6 +101,11 @@ h1{
     font-weight:bold;
 }
 
+.campo_dieta_esp{
+    color: rgb(255, 200, 0);
+    font-weight:bold;
+}
+
 .legenda{
     display: flex;
     justify-content: center;
