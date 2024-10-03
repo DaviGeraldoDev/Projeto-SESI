@@ -1,27 +1,20 @@
 1-
-SELECT rm_usuario, senha_usuario, nome_usuario, serie_usuario, turma_usuario
-FROM users;
+SELECT *FROM users;
 
 2-
-SELECT rm_usuario, cafe_2feira, almoco_2feira, lanche_2feira, cafe_3feira, almoco_3feira, lanche_3feira,
-cafe_4feira, almoco_4feira, lanche_4feira, cafe_5feira, almoco_5feira, lanche_5feira,cafe_6feira, almoco_6feira, lanche_6feira
-FROM comer_ou_nao;
+SELECT u.nome_usuario, u.serie_usuario, u.turma_usuario, c.cafe_2feira, c.almoco_2feira, c.lanche_2feira
+FROM users u JOIN comer_ou_nao c ON u.rm_usuario = c.rm_usuario;
 
 3-
-SELECT id, serie, turma, segunda_cafe, segunda_almoco, segunda_lanche, terca_cafe, terca_almoco, terca_lanche,
-quarta_cafe, quarta_almoco, quarta_lanche, quinta_cafe, quinta_almoco, quinta_lanche,sexta_cafe, sexta_almoco, sexta_lanche
-FROM acesso_refeicoes;
+SELECT count(cafe_2feira) as PessoasQVaoTomarCafe2Feira 
+FROM comer_ou_nao where cafe_2feira = 1 GROUP BY cafe_2feira ;
 
 4-
-SELECT rm_usuario, nome_usuario, turma_usuario
-FROM users
-WHERE serie_usuario = '3EM';
+SELECT nome_usuario, serie_usuario, turma, segunda_cafe FROM users
+JOIN acesso_refeicoes a ON serie_usuario = serie AND turma_usuario = turma
+WHERE segunda_cafe = 1;
 
 5-
-SELECT rm_usuario, cafe_2feira, almoco_2feira, lanche_2feira
-FROM comer_ou_nao;
-
-6-
 SELECT serie, turma
 FROM acesso_refeicoes
 WHERE quarta_cafe = 0;

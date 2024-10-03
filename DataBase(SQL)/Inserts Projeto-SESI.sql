@@ -19,9 +19,12 @@ insert into users(rm_usuario, senha_usuario, nome_usuario, serie_usuario, turma_
 (5708, 'sesi4041', 'Mariana Silva', 6, 'C'),
 (7483, 'sesi4243', 'Rafael Souza', 7, 'A'),
 (7803, 'sesi4445', 'Larissa Cruz', 8, 'B');
+
 update users set serie_usuario = '1EM' where rm_usuario in (3780)
 update users set serie_usuario = '2EM' where rm_usuario in (3411)
 update users set serie_usuario = '3EM' where rm_usuario in (2813)
+
+ALTER TABLE users ADD restricao INT DEFAULT 0 WITH VALUES;
 
 insert into turmas values
 ('A'),
