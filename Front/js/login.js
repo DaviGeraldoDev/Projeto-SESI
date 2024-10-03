@@ -3,7 +3,6 @@ window.sessionStorage.removeItem('JWT');
 $(document).ready(function() {
     $('#Botao').click(  function () {
         var login = document.getElementById("login").value;
-        localStorage.setItem('nome', login);
         var senha = document.getElementById("senha").value;
 
         var xhr = new XMLHttpRequest();
