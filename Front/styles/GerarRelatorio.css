@@ -1,0 +1,116 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo global */
+body {
+    background-image: url("/Front/src/fundo_branco.svg");
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-position: center; 
+    background-attachment: fixed;
+    margin: 0;
+    height: 100vh; /* Define a altura do body para ocupar toda a tela */
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;     /* Centraliza verticalmente */
+}
+
+/* Container principal */
+.container {
+    width: 80%;
+    max-width: 800px;
+    padding: 20px;
+    background-color: white;
+    border: 2px solid red;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza o conteúdo verticalmente dentro do container */
+    align-items: center;     /* Centraliza o conteúdo horizontalmente */
+}
+
+/* Estilização do seletor de datas */
+.header select {
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 20px; /* Espaçamento entre o select e os botões */
+}
+
+/* Botões para seleção de refeições */
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 100%; /* Garante que os botões ocupem toda a largura disponível */
+    margin: 20px 0;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #e0e0e0;
+}
+
+button.selected {
+    background-color: #d3d3d3;
+}
+
+/* Seção de estatísticas */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 100%; /* Garante que a grade ocupe toda a largura disponível */
+    margin-bottom: 20px; /* Espaçamento abaixo da seção de estatísticas */
+}
+
+.stat-item {
+    padding: 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.stat-item h3 {
+    margin-bottom: 10px;
+}
+
+/* Seção de aceitação do cardápio */
+.aceitacao {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #d3d3d3;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%; /* Ocupa toda a largura disponível */
+}
+
+.icons {
+    margin-top: 10px;
+}
+
+/* Estilização dos ícones de aceitação e rejeição */
+.icon-check, .icon-cross {
+    font-size: 40px;
+    margin: 0 20px;
+}
+
+.icon-check {
+    color: green;
+}
+
+.icon-cross {
+    color: red;
+}
