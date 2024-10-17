@@ -1,7 +1,7 @@
 from JWT import verifica_e_decodifica_jwt, iniciandoJWT
 from flask_cors import CORS
 from flask import Blueprint, request
-from cliente_service import verifica_login, cadastro_cliente
+from cliente_service import verifica_login, cadastro_cliente, cadastra_cardapio
 
 cliente_app = Blueprint('cliente_app',  __name__)
 
@@ -26,3 +26,11 @@ def verfica_login_rota():
     if verificacao_login == True:
         return iniciandoJWT()
     return verificacao_login
+
+@cliente_app.route('/cliente/cardapio', methods=['POST'])
+def cadastra_cardapio_rota():
+    dados = request.get_json()
+    cadastro_cardapio = cadastra_cardapio(dados['file'])
+   
+    return cadastro_cardapio
+   

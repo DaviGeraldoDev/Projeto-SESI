@@ -1,4 +1,4 @@
-from db_functions import insert_tabela, verifica_login_db, verifica_usuario_existente_db
+from db_functions import insert_tabela, verifica_login_db, verifica_usuario_existente_db, converter_imagem_para_varbinary
 from model_cliente import Cliente 
 from seg_senha import encrypt_md5
 
@@ -44,3 +44,10 @@ def verifica_usuario_existente(usuario):
             return 'Nome de usuario valido', 200
         return 'Nome de usuario invalido', 401
     return 'Preencha o campo', 401
+
+def cadastra_cardapio(cardapio):
+
+    imagem_varbinary = converter_imagem_para_varbinary(cardapio)
+
+
+    return 'Cardapio cadastrado com sucesso', 200
