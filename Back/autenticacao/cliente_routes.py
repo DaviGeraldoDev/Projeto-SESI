@@ -40,7 +40,6 @@ def obter_imagem():
 @cliente_app.route('/cliente/cardapio', methods=['POST'])
 def cadastra_cardapio_rota():
     dados = request.get_json()
-    cadastro_cardapio = cadastra_cardapio(dados['file'])
+    cadastro_cardapio = cadastra_cardapio(dados['file'], dados['data_inicio'], dados['data_fim'])
    
     return cadastro_cardapio
-   

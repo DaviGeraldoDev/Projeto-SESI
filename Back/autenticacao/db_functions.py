@@ -75,21 +75,12 @@ def converter_imagem_para_varbinary(caminho_imagem):
         dados_binarios = arquivo_imagem.read()
     return dados_binarios
 
-def inserir_imagem():
-    caminho_imagem = 'caminho imagem.png'
-    with open(caminho_imagem, 'rb') as file:
-        imagem_binaria = file.read()
-
-    # Definindo as datas como strings
-    data_inicio = '2024-05-01'  # Exemplo de data de criação
-    data_final = '2024-05-08'  # Exemplo de data de atualização
-
+def inserir_imagem(imagem_binaria, data_inicio, data_fim):
     # Inserção da imagem e das datas na tabela
     comando_sql = """
         INSERT INTO cardapio (imagem, data_inicial, data_final) 
         VALUES (?, ?, ?)
     """
-
     # Execute o comando com os parâmetros
-    cursor.execute(comando_sql, (imagem_binaria, data_inicio, data_final))
+    cursor.execute(comando_sql, (imagem_binaria, data_inicio, data_fim))
     cursor.commit()
