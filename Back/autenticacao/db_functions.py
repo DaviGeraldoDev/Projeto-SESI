@@ -47,12 +47,10 @@ def verifica_login_db(login, senha):
     #Divide a lista em variáveis
     usuario_comparacao = lista_resultado[0]
     senha_comparacao = lista_resultado[1]
-    print(login)
-    print(usuario_comparacao)
-    print(senha_encrypt)
-    print(senha_comparacao)
+
     #Verificação final
     if login == str(usuario_comparacao) and senha_encrypt == senha_comparacao:
-        print("oba oba")
+
         return True
+    
     return 'Acesso negado', 401
