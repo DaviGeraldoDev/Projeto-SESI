@@ -1,4 +1,4 @@
-from db_functions import insert_tabela, verifica_login_db, verifica_usuario_existente_db, converter_imagem_para_varbinary
+from db_functions import insert_tabela, verifica_login_db, verifica_usuario_existente_db, converter_imagem_para_varbinary, inserir_imagem
 from model_cliente import Cliente 
 from seg_senha import encrypt_md5
 
@@ -23,7 +23,8 @@ def cadastro_cliente(nome, usuario, senha, genero, data_nascimento):
         if verificacao == True:
             #Hash acontece na classe, se fosse pra definir num de caracteres na senha ou tipo de caracteres
             #Faria aqui
-            novo_cliente = Cliente(nome, usuario, senha, genero, data_nascimento)
+            senha_md5 = encrypt_md5(senha)
+            novo_cliente = Cliente(nome, usuario, senha_md5, genero, data_nascimento)
             insert_tabela(novo_cliente)
             return 'Cliente cadastrado com sucesso', 200
 
@@ -45,9 +46,7 @@ def verifica_usuario_existente(usuario):
         return 'Nome de usuario invalido', 401
     return 'Preencha o campo', 401
 
-def cadastra_cardapio(cardapio):
-
+def cadastra_cardapio(cardapio, data_inicio, data_fim):
     imagem_varbinary = converter_imagem_para_varbinary(cardapio)
-
-
+    inserir_imagem(imagem_varbinary, data_inicio, data_fim)
     return 'Cardapio cadastrado com sucesso', 200
