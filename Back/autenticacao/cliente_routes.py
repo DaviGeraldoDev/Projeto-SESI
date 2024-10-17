@@ -1,13 +1,8 @@
 from JWT import verifica_e_decodifica_jwt, iniciandoJWT
 from flask_cors import CORS
-<<<<<<< HEAD
 from flask import Blueprint, request, jsonify
-from cliente_service import verifica_login, cadastro_cliente
-from db_functions import recuperar_imagem
-=======
-from flask import Blueprint, request
 from cliente_service import verifica_login, cadastro_cliente, cadastra_cardapio
->>>>>>> 75a621c46eaef1f8a1beb4b8bf8e1d573c35bff7
+from db_functions import recuperar_imagem
 
 cliente_app = Blueprint('cliente_app',  __name__)
 
@@ -33,7 +28,6 @@ def verfica_login_rota():
         return iniciandoJWT()
     return verificacao_login
 
-<<<<<<< HEAD
 @cliente_app.route('/obter-imagem', methods=['GET'])
 def obter_imagem():
     imagem_base64 = recuperar_imagem()
@@ -42,7 +36,7 @@ def obter_imagem():
         return jsonify({'imagem': imagem_base64})
     else:
         return jsonify({'erro': 'Imagem não encontrada'}), 404
-=======
+
 @cliente_app.route('/cliente/cardapio', methods=['POST'])
 def cadastra_cardapio_rota():
     dados = request.get_json()
@@ -50,4 +44,3 @@ def cadastra_cardapio_rota():
    
     return cadastro_cardapio
    
->>>>>>> 75a621c46eaef1f8a1beb4b8bf8e1d573c35bff7

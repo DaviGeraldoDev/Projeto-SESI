@@ -48,15 +48,9 @@ def verifica_login_db(login, senha):
     #Divide a lista em variáveis
     usuario_comparacao = lista_resultado[0]
     senha_comparacao = lista_resultado[1]
-<<<<<<< HEAD
-=======
-
->>>>>>> 75a621c46eaef1f8a1beb4b8bf8e1d573c35bff7
     #Verificação final
     if login == str(usuario_comparacao) and senha_encrypt == senha_comparacao:
-
         return True
-<<<<<<< HEAD
     return 'Acesso negado', 401
 
 def recuperar_imagem():
@@ -75,12 +69,27 @@ def recuperar_imagem():
         return imagem_base64
     else:
         return None
-=======
-    
-    return 'Acesso negado', 401
 
 def converter_imagem_para_varbinary(caminho_imagem):
     with open(caminho_imagem, 'rb') as arquivo_imagem:
         dados_binarios = arquivo_imagem.read()
     return dados_binarios
->>>>>>> 75a621c46eaef1f8a1beb4b8bf8e1d573c35bff7
+
+def inserir_imagem():
+    caminho_imagem = 'caminho imagem.png'
+    with open(caminho_imagem, 'rb') as file:
+        imagem_binaria = file.read()
+
+    # Definindo as datas como strings
+    data_inicio = '2024-05-01'  # Exemplo de data de criação
+    data_final = '2024-05-08'  # Exemplo de data de atualização
+
+    # Inserção da imagem e das datas na tabela
+    comando_sql = """
+        INSERT INTO cardapio (imagem, data_inicial, data_final) 
+        VALUES (?, ?, ?)
+    """
+
+    # Execute o comando com os parâmetros
+    cursor.execute(comando_sql, (imagem_binaria, data_inicio, data_final))
+    cursor.commit()
