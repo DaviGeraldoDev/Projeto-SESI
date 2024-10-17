@@ -29,15 +29,27 @@ header {
     height: auto; 
 }
 
+img {
+    height: 450px;
+    width: 100%;
+    max-width: 500px;
+}
+
 .container-tabela {
     width: 100%;
-    max-width: 800px;
+    max-width: 600px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     box-sizing: border-box;
-    border: 2px solid red;
+    border: 2px solid rgb(0, 0, 0);
     margin-top: 80px;
+}
+
+.teste {
+    display: flex;
+    gap: 100px;
+    justify-content: center;
 }
 
 h2 {
@@ -48,62 +60,82 @@ h2 {
 table {
     width: 100%;
     border-collapse: collapse;
+    text-align: center;
 }
 
-.filtro{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin-bottom: 20px;
-    gap: 10px;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
-}
-
-dia{
-    margin-bottom: 20px;
-    gap: 10px;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
-}
-
-select{
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #fff;
-    cursor: pointer;
-}
-
-table, th, td {
-    border: 1px solid #ddd;
-}
-
-th, td {
-    padding: 10px;
-    text-align: left;
-}
-
-th {
+thead th {
     background-color: #f2f2f2;
+    padding: 10px;
+    font-size: 18px;
 }
 
+tbody td {
+    padding: 19px;
+    border: 1px solid #000000;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: #09ff00;
+}
+
+button {
+    padding: 10px 20px;
+    border-radius: 15px;
+    line-height: 1.25;
+    background: #ff2a00;
+    text-decoration: none;
+    user-select: none;
+    color: white;
+    font-size: 16px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    position: relative;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .container-tabela {
+        max-width: 90%;
+    }
+
+    .teste {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    img {
+        height: auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 20px;
+    }
 
     button {
-        padding: 10px 20px;
-        border-radius: 15px;
-        line-height: 1.25;
-        background: #ff2a00;
-        text-decoration: none;
-        user-select: none;
-        color: white;
-        font-size: 16px;
-        letter-spacing: .08em;
-        text-transform: uppercase;
-        position: relative;
-        margin-top: 20px;
-      }
+        width: 100%;
+        margin-top: 10px;
+        font-size: 14px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    input[type="checkbox"] {
+        width: 15px;
+        height: 15px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    tbody td {
+        padding: 10px;
+    }
+}
