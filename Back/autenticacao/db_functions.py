@@ -54,3 +54,8 @@ def verifica_login_db(login, senha):
         return True
     
     return 'Acesso negado', 401
+
+def converter_imagem_para_varbinary(caminho_imagem):
+    with open(caminho_imagem, 'rb') as arquivo_imagem:
+        dados_binarios = arquivo_imagem.read()
+    return dados_binarios
