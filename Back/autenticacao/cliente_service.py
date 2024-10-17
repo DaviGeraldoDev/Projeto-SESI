@@ -23,7 +23,8 @@ def cadastro_cliente(nome, usuario, senha, genero, data_nascimento):
         if verificacao == True:
             #Hash acontece na classe, se fosse pra definir num de caracteres na senha ou tipo de caracteres
             #Faria aqui
-            novo_cliente = Cliente(nome, usuario, senha, genero, data_nascimento)
+            senha_md5 = encrypt_md5(senha)
+            novo_cliente = Cliente(nome, usuario, senha_md5, genero, data_nascimento)
             insert_tabela(novo_cliente)
             return 'Cliente cadastrado com sucesso', 200
 

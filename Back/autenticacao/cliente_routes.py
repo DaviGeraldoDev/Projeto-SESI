@@ -1,7 +1,8 @@
 from JWT import verifica_e_decodifica_jwt, iniciandoJWT
 from flask_cors import CORS
-from flask import Blueprint, request
+from flask import Blueprint, request, jsonify
 from cliente_service import verifica_login, cadastro_cliente
+from db_functions import recuperar_imagem
 
 cliente_app = Blueprint('cliente_app',  __name__)
 
@@ -26,3 +27,12 @@ def verfica_login_rota():
     if verificacao_login == True:
         return iniciandoJWT()
     return verificacao_login
+
+@cliente_app.route('/obter-imagem', methods=['GET'])
+def obter_imagem():
+    imagem_base64 = recuperar_imagem()
+    if imagem_base64:
+        # Retorna a imagem em formato JSON
+        return jsonify({'imagem': imagem_base64})
+    else:
+        return jsonify({'erro': 'Imagem não encontrada'}), 404

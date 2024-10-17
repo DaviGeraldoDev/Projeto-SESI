@@ -1,5 +1,6 @@
 import pyodbc
 from seg_senha import encrypt_md5
+import base64
 "Mariane Nutri" "SESI123"
 
 #Conexão com o Banco de dados
@@ -47,12 +48,25 @@ def verifica_login_db(login, senha):
     #Divide a lista em variáveis
     usuario_comparacao = lista_resultado[0]
     senha_comparacao = lista_resultado[1]
-    print(login)
-    print(usuario_comparacao)
-    print(senha_encrypt)
-    print(senha_comparacao)
     #Verificação final
     if login == str(usuario_comparacao) and senha_encrypt == senha_comparacao:
         print("oba oba")
         return True
     return 'Acesso negado', 401
+
+def recuperar_imagem():
+    # Consultando a imagem
+    comando_sql = "SELECT imagem FROM cardapio WHERE data_inicial = ? AND data_final = ?"
+    data_inicio = '2024-05-01'  # Defina as datas como critério de busca
+    data_final = '2024-05-08'
+    
+    cursor.execute(comando_sql, (data_inicio, data_final))
+    resultado = cursor.fetchone()
+
+    # Retorna a imagem binária se existir
+    if resultado:
+        # Converte a imagem binária para Base64
+        imagem_base64 = base64.b64encode(resultado[0]).decode('utf-8')
+        return imagem_base64
+    else:
+        return None
