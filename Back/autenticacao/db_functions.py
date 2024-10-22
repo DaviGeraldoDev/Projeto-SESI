@@ -59,8 +59,7 @@ def recuperar_imagem():
     data_inicio = '2024-05-01'  # Defina as datas como critério de busca
     data_final = '2024-05-08'
     
-    cursor.execute(comando_sql, (data_inicio, data_final))
-    resultado = cursor.fetchone()
+    resultado = cursor.execute(comando_sql, (data_inicio, data_final)).fetchone()
 
     # Retorna a imagem binária se existir
     if resultado:
