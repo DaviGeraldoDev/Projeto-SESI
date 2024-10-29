@@ -37,9 +37,9 @@ def obter_imagem():
     else:
         return jsonify({'erro': 'Imagem não encontrada'}), 404
 
-@cliente_app.route('/cliente/cardapio', methods=['POST'])
+@cliente_app.route('/cliente/cardapio', methods=['GET','POST'])
 def cadastra_cardapio_rota():
-    dados = request.get_json()
-    cadastro_cardapio = cadastra_cardapio(dados['file'], dados['data_inicio'], dados['data_fim'])
+    
+    cadastro_cardapio = cadastra_cardapio(request.files['file'], request.form['data_inicio'], request.form['data_fim'])
    
     return cadastro_cardapio
