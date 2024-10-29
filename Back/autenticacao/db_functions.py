@@ -71,8 +71,8 @@ def recuperar_imagem():
         return None
 
 def converter_imagem_para_varbinary(caminho_imagem):
-    with open(caminho_imagem, 'rb') as arquivo_imagem:
-        dados_binarios = arquivo_imagem.read()
+    #with open(caminho_imagem, 'rb') as arquivo_imagem:
+    dados_binarios = caminho_imagem.read()
     return dados_binarios
 
 def inserir_imagem(imagem_binaria, data_inicio, data_fim):
