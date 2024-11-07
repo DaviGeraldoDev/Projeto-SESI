@@ -1,5 +1,4 @@
 import pyodbc
-from seg_senha import encrypt_md5
 import base64
 "Mariane Nutri" "SESI123"
 
@@ -22,36 +21,6 @@ cursor = cnxn.cursor()
 #                 END
 #                """)
 # cursor.commit()
-
-def verifica_usuario_existente_db(usuario):
-    select_usuario_existente = cursor.execute(f"SELECT usuario,senha FROM usuario WHERE usuario = '{usuario}'").fetchall()
-    resposta = [tuple(row) for row in select_usuario_existente]
-    if not resposta:
-        return True
-    return False
-
-def insert_tabela(cliente):
-    cursor.execute(f"INSERT INTO clientes VALUES('{cliente.nome}', '{cliente.usuario}', '{cliente.senha}', '{cliente.genero}', '{cliente.data_nascimento}')")
-    cursor.commit()
-
-def verifica_login_db(login, senha):
-    #encripta a senha do input
-    senha_encrypt = encrypt_md5(senha)
-    #Busca a existência de um cliente com as credenciais descritas
-    select_verificacao = cursor.execute(f"SELECT id_usuario,senha FROM usuarios WHERE id_usuario = '{login}'").fetchall()
-    resposta = [tuple(row) for row in select_verificacao]
-    #Verifica se será um select vazio
-    if not resposta:
-        return 'Cliente inexistente', 401
-    #Armazena em lista os resultados 
-    lista_resultado = resposta[0]
-    #Divide a lista em variáveis
-    usuario_comparacao = lista_resultado[0]
-    senha_comparacao = lista_resultado[1]
-    #Verificação final
-    if login == str(usuario_comparacao) and senha_encrypt == senha_comparacao:
-        return True
-    return 'Acesso negado', 401
 
 def recuperar_imagem():
     # Consultando a imagem
