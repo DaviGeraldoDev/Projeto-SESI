@@ -1,7 +1,6 @@
 function render_refeicao(refeicao, diaSemana){
     const div = document.createElement('div')
     div.setAttribute('class', 'refeicaoAtiva')
-    div.textContent = refeicao
     diaSemana.appendChild(div)
 }
 

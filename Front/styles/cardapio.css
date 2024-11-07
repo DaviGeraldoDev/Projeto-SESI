@@ -36,6 +36,17 @@ h1{
     width: auto;
 }
 
+main{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.img_cardapio{
+    width: 600px;
+    height: auto;
+}
+
 .est_cardapio{
     display: flex;
     flex-direction: column;
@@ -50,7 +61,7 @@ h1{
 #cardapio{
     display: flex;
     margin: 20px;
-    padding-right: 121px;
+    
 }
 
 .diaSemana{
@@ -64,8 +75,8 @@ h1{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 121px;
-    height: 143px;
+    width: 70px;
+    height: 70px;
     padding: 10px;
     font-size: 12px;
 }
@@ -74,8 +85,8 @@ h1{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 121px;
-    height: 143px;
+    width: 70px;
+    height: 70px;
     padding: 10px;
     background-color: #acf74d;
     border: solid #77d500 2px;
