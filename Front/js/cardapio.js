@@ -1,3 +1,18 @@
+$(document).ready(function(){
+    // Faz a requisição para a API
+    $.getJSON("http://127.0.0.1:5000/obter-imagem", function(data) {
+        console.log("Resposta recebida: ", data); // Depuração da resposta
+        if (data.imagem) {
+            $('#imagem-cardapio').attr('src', 'data:image/png;base64,' + data.imagem);
+            console.log("Imagem carregada com sucesso.");
+        } else {
+            alert("Imagem não encontrada!");
+        }
+    }).fail(function(jqXHR, textStatus, errorThrown) {
+        console.error("Erro ao carregar a imagem: " + textStatus + " " + errorThrown);
+    });
+});
+
 function render_refeicao(refeicao, diaSemana){
     const div = document.createElement('div')
     div.setAttribute('class', 'refeicaoAtiva')
