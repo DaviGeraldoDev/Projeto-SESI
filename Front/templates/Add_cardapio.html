@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/Front/styles/add_cardapio.css">
+    <link rel="stylesheet" href="/Front/styles/AddCardapio.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="icon" href="/Front/src/logo_barra.png">
     <title>Gestão de Cardápio</title>
 </head>
+<body> 
+    <header>
+        <img src="/Front/src/Sesi-SP.jpg" alt="Logo SESI" class="logo-sesi">
+        <img src="/Front/src/sol.png" alt="Lua" id="MudarTema" class="icon-sol">
+    </header>
 
-<body>
+    <div class="formulario">
     <form action="http://127.0.0.1:5000/cliente/cardapio" method="POST" enctype="multipart/form-data">
         <input type="date" name="data_inicio">
         <input type="date" name="data_fim">
         <input type="file" name="filedx" accept="image/*">
         <input type="submit">
     </form>
-
+</div>
+    
 </body>
-
 </html>
