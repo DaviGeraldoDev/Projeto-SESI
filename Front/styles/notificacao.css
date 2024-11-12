@@ -11,8 +11,8 @@ body {
   flex-direction: column;
 }
 
-.header {
-  background-color: #ff0000;
+.header{
+  background: linear-gradient(to right, #FAFAFA, #FF0000, #FF0000);
   color: #fff;
   padding: 25px;
   display: flex;
