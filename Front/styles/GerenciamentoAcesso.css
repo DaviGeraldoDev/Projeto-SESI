@@ -16,17 +16,20 @@ body {
 }
 
 header {
+    background: linear-gradient(to right, #FAFAFA, #FF0000, #FF0000);
     width: 100%;
-    position: absolute; 
+    height: 75%;
+    margin-top: 50px;
     top: 0;
     left: 0;
-    padding: 10px;
+    padding: 20px 30px;
     box-sizing: border-box; 
 }
 
 .logo-sesi {
     max-width: 150px;
     height: auto; 
+    position: absolute;
 }
 
 img {
@@ -55,6 +58,8 @@ img {
 h2 {
     display: flex;
     justify-content: center;
+    text-align: center;
+    color: #FAFAFA;
 }
 
 table {
