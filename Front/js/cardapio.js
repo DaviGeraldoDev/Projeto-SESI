@@ -11,6 +11,40 @@ $(document).ready(function(){
     }).fail(function(jqXHR, textStatus, errorThrown) {
         console.error("Erro ao carregar a imagem: " + textStatus + " " + errorThrown);
     });
+
+    $('#bt_confirmar').click(  function () {
+        var login = document.getElementById("login").value;
+        var senha = document.getElementById("senha").value;
+
+        var xhr = new XMLHttpRequest();
+        var url = "http://127.0.0.1:5000/cliente/login";
+        xhr.open("POST", url, true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                if (login == "Mariane Nutri"){
+                    window.sessionStorage.setItem('JWT',xhr.responseText);
+                    window.location.href = "Home_mariana.html";
+                }
+
+                else{
+                    window.sessionStorage.setItem('JWT',xhr.responseText);
+                    window.location.href = "Menu.html";
+                }
+
+            }if(xhr.readyState === 4 && xhr.status === 401){
+              alert("Usuário ou senha incorretos");
+            }
+        };
+        var data = JSON.stringify(
+            {
+                "login": login, 
+                "senha": senha
+            }
+         );
+        xhr.send(data);    
+
+    });
 });
 
 function render_refeicao(refeicao, diaSemana){
@@ -45,11 +79,11 @@ function render_cardapio(info_diaSemana) {
 }
 
 const cardapio = [
-    {dia: '02/09', dia_semana: 'Seg', cafe: 'Pão de leite; Pão de leite; Pão de leite;', almoco: 'Pão de leite', lanche: 'Pão de leite'},
-    {dia: '03/09', dia_semana: 'Ter', cafe: 'Pão de leite', almoco: 'Pão de leite', lanche: 'Pão de leite'},
-    {dia: '04/09', dia_semana: 'Qua', cafe: 'Pão de leite', almoco: 'Pão de leite', lanche: 'Pão de leite'},
-    {dia: '05/09', dia_semana: 'Qui', cafe: 'Pão de leite', almoco: 'Pão de leite', lanche: 'Pão de leite'},
-    {dia: '06/09', dia_semana: 'Sex', cafe: 'Pão de leite', almoco: 'Pão de leite', lanche: 'Pão de leite'},
+    {dia: '02/09', dia_semana: 'Seg', cafe: '', almoco: '', lanche: ''},
+    {dia: '03/09', dia_semana: 'Ter', cafe: '', almoco: '', lanche: ''},
+    {dia: '04/09', dia_semana: 'Qua', cafe: '', almoco: '', lanche: ''},
+    {dia: '05/09', dia_semana: 'Qui', cafe: '', almoco: '', lanche: ''},
+    {dia: '06/09', dia_semana: 'Sex', cafe: '', almoco: '', lanche: ''},
 ]
 
 cardapio.forEach(info_diaSemana => {
@@ -59,7 +93,6 @@ cardapio.forEach(info_diaSemana => {
 
 const refeicao = Array.prototype.slice.call(document.getElementsByClassName("refeicaoAtiva"))
 const bt_limpar = document.getElementById('bt_limpar')
-const bt_confirmar = document.getElementById('bt_confirmar')
 
 function press(){
     this.classList.toggle("refeicaoInativa")
@@ -76,14 +109,10 @@ function press_bt_limpar(){
     
 }
 
-bt_limpar.addEventListener("click", press_bt_limpar)
-
 function press_bt_confirmar(){
     alert('As informações foram enviadas com sucesso!')
     window.location = 'Menu.html'
 }
-
-bt_confirmar.addEventListener("click", press_bt_confirmar)
 
 //MODO DARK
 const icon = document.getElementById("MudarTema");
@@ -97,7 +126,6 @@ icon.addEventListener("click", () => {
 
     } else {
         themeIcon.src = "/Front/src/lua.png";
-
-
+        
     }
 });
