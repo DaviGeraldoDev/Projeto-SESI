@@ -1,14 +1,16 @@
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: #ffffff;
-  margin: 0px;
-  padding: 10px;
+  margin: 0;
+  padding: 0;
+  background-image: url("/Front/src/fundo_branco.svg");
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 60vh; /* Altere para ocupar a altura total */
   flex-direction: column;
+  font-family: Arial, sans-serif;
+  height: 100%;
 }
 
 .header {
