@@ -52,3 +52,15 @@ def inserir_imagem(imagem_binaria, data_inicio, data_fim):
     # Execute o comando com os parâmetros
     cursor.execute(comando_sql, (imagem_binaria, data_inicio, data_fim))
     cursor.commit()
+
+def AgendarRefeicaoDb(id_usuario, Refeicoes):
+
+    for Refeicao in Refeicoes:
+        comando_sql = f"""
+            insert into REFEICAO_AGENDADA (id_data, id_usuario, cafe_manha, almoco, cafe_tarde) 
+            values 
+            ('{Refeicao['data']}', {id_usuario}, {int(Refeicao['cafe_manha'])}, {int(Refeicao['almoco'])}, {int(Refeicao['cafe_tarde'])})
+        """
+        cursor.execute(comando_sql)
+
+    cursor.commit()

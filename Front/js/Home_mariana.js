@@ -1,25 +1,3 @@
-<<<<<<< HEAD
-// var JWT = window.sessionStorage.getItem('JWT');
-// 	if (JWT == null || JWT == ''){
-// 		window.location.href = "login.html";
-// 	}
-// var xhr = new XMLHttpRequest();
-// var url = "http://localhost:5000/cliente";
-// xhr.open("GET", url, true);
-// xhr.setRequestHeader("Content-Type", "application/json");
-// xhr.setRequestHeader("Token", window.sessionStorage.getItem('JWT'));
-// xhr.onload = function () {
-// 		if (xhr.status !== 200) {
-//             alert("Token expirado, faça login novamente!");
-// 			window.location.href = 'login.html';
-// 		}
-// };
-// xhr.responseType="text";
-// xhr.send();    
-
-
-=======
->>>>>>> 7987c9b92fb066cc379ebb9ae50a59d8f02d4b36
 // //MODO DARK
 const icon = document.getElementById("MudarTema");
 const themeIcon = document.getElementById("MudarTema");
