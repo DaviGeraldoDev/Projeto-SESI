@@ -1,9 +1,6 @@
-$('#bt_confirmar').click(  function () {
-    var vou_comer = document.getElementsByClassName("refeicaoAtiva")
-    var n_vou_comer = document.getElementsByClassName("refeicaoAtiva refeicaoInativa")
-
-    console.log(vou_comer)
-    console.log(n_vou_comer)
+$('#Botao').click(  function () {
+    var login = document.getElementById("login")
+    var senha = document.getElementById("senha")
 
     var xhr = new XMLHttpRequest();
     var url = "http://127.0.0.1:5000/cliente/login";
@@ -12,12 +9,12 @@ $('#bt_confirmar').click(  function () {
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
             if (login == "Mariane Nutri"){
-                window.sessionStorage.setItem('JWT',xhr.responseText);
+                // window.sessionStorage.setItem('JWT',xhr.responseText);
                 window.location.href = "Home_mariana.html";
             }
 
             else{
-                window.sessionStorage.setItem('JWT',xhr.responseText);
+                // window.sessionStorage.setItem('JWT',xhr.responseText);
                 window.location.href = "Menu.html";
             }
 
@@ -27,7 +24,8 @@ $('#bt_confirmar').click(  function () {
     };
     var data = JSON.stringify(
         {
-            
+            "login": login,
+            "senha": senha
         }
      );
     xhr.send(data);    
