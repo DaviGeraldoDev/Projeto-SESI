@@ -13,34 +13,59 @@ $(document).ready(function(){
     });
 
     $('#bt_confirmar').click(  function () {
-        var login = document.getElementById("login").value;
-        var senha = document.getElementById("senha").value;
+        var vou_comer = document.getElementsByClassName("refeicaoAtiva");
+        var array_resultado = Array.prototype.slice.call(vou_comer).map(function(element) {
+          return element.classList.contains("refeicaoInativa") ? 0 : 1;
+        });
+
+        var boolean_resultado = array_resultado.map(function(valor) {
+          return valor === 1; 
+        });
+
+        var user_data = {
+          'id_usuario': 1,
+          'refeicoes': [
+            {dia: '02/09', dia_semana: 'Seg', cafe_manha: false, almoco: false, cafe_tarde: false},
+            {dia: '03/09', dia_semana: 'Ter', cafe_manha: false, almoco: false, cafe_tarde: false},
+            {dia: '04/09', dia_semana: 'Qua', cafe_manha: false, almoco: false, cafe_tarde: false},
+            {dia: '05/09', dia_semana: 'Qui', cafe_manha: false, almoco: false, cafe_tarde: false},
+            {dia: '06/09', dia_semana: 'Sex', cafe_manha: false, almoco: false, cafe_tarde: false}
+          ]
+        };
+
+        // Associar os valores booleanos ao JSON
+        boolean_resultado.forEach(function(valor, index) {
+          if (valor) {
+            switch (index % 3) {
+              case 0:
+                user_data.refeicoes[Math.floor(index / 3)].cafe_manha = true;
+                break;
+              case 1:
+                user_data.refeicoes[Math.floor(index / 3)].almoco = true;
+                break;
+              case 2:
+                user_data.refeicoes[Math.floor(index / 3)].cafe_tarde = true;
+                break;
+            }
+          }
+        });
+        console.log(user_data);
 
         var xhr = new XMLHttpRequest();
-        var url = "http://127.0.0.1:5000/cliente/login";
+        var url = "http://127.0.0.1:5000/refeicaoAgendada";
         xhr.open("POST", url, true);
         xhr.setRequestHeader("Content-Type", "application/json");
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4 && xhr.status === 200) {
-                if (login == "Mariane Nutri"){
-                    window.sessionStorage.setItem('JWT',xhr.responseText);
-                    window.location.href = "Home_mariana.html";
-                }
-
-                else{
-                    window.sessionStorage.setItem('JWT',xhr.responseText);
-                    window.location.href = "Menu.html";
-                }
+                alert("Refeição agendada com sucesso!");
 
             }if(xhr.readyState === 4 && xhr.status === 401){
               alert("Usuário ou senha incorretos");
             }
         };
         var data = JSON.stringify(
-            {
-                "login": login, 
-                "senha": senha
-            }
+            {user_data}
+                
          );
         xhr.send(data);    
 
