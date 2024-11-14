@@ -14,10 +14,21 @@ body {
     background-color: #f0f2f5;
 }
 header {
-    display: grid;
-    grid-template-columns: 1fr auto;
+    background: linear-gradient(to right, #FAFAFA, #FF0000, #FF0000);
+    display: flex;
+    height: 17%;
+    max-width: 100%;
+    justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 20px 30px;
+}
+
+header h1 {
+    color: rgb(255, 255, 255);
+    margin: 0;
+    position: absolute; 
+    left: 50%; 
+    transform: translateX(-50%); 
 }
 
 
@@ -34,7 +45,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 150px;
+    margin-top: 125px;
 }
 form {
     display: flex;
