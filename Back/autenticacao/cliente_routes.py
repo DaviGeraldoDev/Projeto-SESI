@@ -16,9 +16,19 @@ def refeicaoAgendada():
 @cliente_app.route('/obter-imagem', methods=['GET'])
 def obter_imagem():
     imagem_base64 = recuperar_imagem()
+    # info_data = getInfoData()
+    '''
+    [{dia: '02/09', dia_semana: 'Seg'},
+    {dia: '03/09', dia_semana: 'Ter'},
+    {dia: '04/09', dia_semana: 'Qua'},
+    {dia: '05/09', dia_semana: 'Qui'},
+    {dia: '06/09', dia_semana: 'Sex'}]
+    '''
+    
     if imagem_base64:
         # Retorna a imagem em formato JSON
-        return jsonify({'imagem': imagem_base64})
+        return jsonify({'imagem': imagem_base64,
+                        'info-data': info_data})
     else:
         return jsonify({'erro': 'Imagem não encontrada'}), 404
 

@@ -72,7 +72,7 @@ $(document).ready(function(){
     });
 });
 
-function render_refeicao(refeicao, diaSemana){
+function render_refeicao(diaSemana){
     const div = document.createElement('div')
     div.setAttribute('class', 'refeicaoAtiva')
     diaSemana.appendChild(div)
@@ -90,9 +90,9 @@ function render_cardapio(info_diaSemana) {
     
     diaSemana.appendChild(dia_semana)
 
-    render_refeicao(info_diaSemana.cafe, diaSemana)
-    render_refeicao(info_diaSemana.almoco, diaSemana)
-    render_refeicao(info_diaSemana.lanche, diaSemana)
+    render_refeicao(diaSemana)
+    render_refeicao(diaSemana)
+    render_refeicao(diaSemana)
 
     const dia = document.createElement('p')
     dia.textContent = info_diaSemana.dia
@@ -104,11 +104,11 @@ function render_cardapio(info_diaSemana) {
 }
 
 const cardapio = [
-    {dia: '02/09', dia_semana: 'Seg', cafe: '', almoco: '', lanche: ''},
-    {dia: '03/09', dia_semana: 'Ter', cafe: '', almoco: '', lanche: ''},
-    {dia: '04/09', dia_semana: 'Qua', cafe: '', almoco: '', lanche: ''},
-    {dia: '05/09', dia_semana: 'Qui', cafe: '', almoco: '', lanche: ''},
-    {dia: '06/09', dia_semana: 'Sex', cafe: '', almoco: '', lanche: ''},
+    {dia: '02/09', dia_semana: 'Seg'},
+    {dia: '03/09', dia_semana: 'Ter'},
+    {dia: '04/09', dia_semana: 'Qua'},
+    {dia: '05/09', dia_semana: 'Qui'},
+    {dia: '06/09', dia_semana: 'Sex'},
 ]
 
 cardapio.forEach(info_diaSemana => {
