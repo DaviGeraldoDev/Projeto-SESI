@@ -149,7 +149,6 @@ $(document).ready(function(){
         };
         var data = JSON.stringify(
             {user_data}
-                
          );
         xhr.send(data);    
 
