@@ -14,7 +14,7 @@ body {
     background-color: #f0f2f5;
 }
 header {
-    background: linear-gradient(to right, #FAFAFA, #FF0000, #FF0000);
+    background: linear-gradient(to right, #000000, #FF0000, #FF0000);
     display: flex;
     height: 17%;
     max-width: 100%;
