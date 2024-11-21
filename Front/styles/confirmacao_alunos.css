@@ -16,7 +16,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(to right, #ffff, #FF0000);
+  background: linear-gradient(to right, #000000, #FF0000);
   padding: 5px;
   max-width: 100%;
   height: 17%;
