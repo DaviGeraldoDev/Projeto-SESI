@@ -96,7 +96,7 @@ $(document).ready(function(){
         });
 
         var user_data = {
-          'id_usuario': 4,
+          'id_usuario': 20,
           'refeicoes': [
             {data: dias[1].getAttribute('data'), dia_semana: 'Seg', cafe_manha: false, almoco: false, cafe_tarde: false},
             {data: dias[2].getAttribute('data'), dia_semana: 'Ter', cafe_manha: false, almoco: false, cafe_tarde: false},

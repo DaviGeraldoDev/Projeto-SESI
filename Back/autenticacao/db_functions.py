@@ -41,14 +41,13 @@ def recuperar_imagem():
 
     resultado_formatado = {'imagem': imagem_base64,
                            'refeicoes':
-                           [{"dia": data_inicio , "dia_semana": 'Seg'},
-                           {"dia": data_inicio_2, "dia_semana": 'Ter'},
-                           {"dia": data_inicio_3, "dia_semana": 'Qua'},
-                           {"dia": data_inicio_4, "dia_semana": 'Qui'},
-                           {"dia": data_final, "dia_semana": 'Sex'}]}
+                           [{"dia": str(data_inicio) , "dia_semana": 'Seg'},
+                           {"dia": str(data_inicio_2), "dia_semana": 'Ter'},
+                           {"dia": str(data_inicio_3), "dia_semana": 'Qua'},
+                           {"dia": str(data_inicio_4), "dia_semana": 'Qui'},
+                           {"dia": str(data_final), "dia_semana": 'Sex'}]}
     
     if resultado_formatado != None: 
-        print(str(data_inicio))     
         return resultado_formatado
     else:
         return None
