@@ -1,10 +1,90 @@
+function render_refeicao(diaSemana){
+    const div = document.createElement('div')
+    div.setAttribute('class', 'refeicaoAtiva')
+    //div.setAttribute('estado','0')
+    diaSemana.appendChild(div)
+}
+
+function render_cardapio(info_diaSemana) {
+
+    const cardapio = document.getElementById('cardapio')
+
+    const diaSemana = document.createElement('div')
+    diaSemana.setAttribute('class', 'diaSemana')
+
+    const dia_semana = document.createElement('p')
+    dia_semana.textContent = info_diaSemana.dia_semana
+    
+    diaSemana.appendChild(dia_semana)
+
+    render_refeicao(diaSemana)
+    render_refeicao(diaSemana)
+    render_refeicao(diaSemana)
+
+    const dia = document.createElement('p')
+    dia.textContent = info_diaSemana.dia
+    
+    diaSemana.appendChild(dia)
+
+    cardapio.appendChild(diaSemana)
+
+}
+
+const refeicao = Array.prototype.slice.call(document.getElementsByClassName("refeicaoAtiva"))
+
+function press(){
+    this.classList.toggle("refeicaoInativa")
+    /*if (this.state == '0') {
+        this.state = '1'
+    }else{
+        this.state = '0'
+    }*/
+    console.log("this.state =",this.estado)  
+}
+
+refeicao.forEach(element => {
+    element.addEventListener("click", press)
+});
+
+function press_bt_limpar(){
+    refeicao.forEach(element => {
+        element.classList.add("refeicaoInativa")
+    });
+    
+}
+
+function press_bt_confirmar(){
+    alert('As informações foram enviadas com sucesso!')
+    window.location = 'Menu.html'
+}
+
+//MODO DARK
+const icon = document.getElementById("MudarTema");
+const themeIcon = document.getElementById("MudarTema");
+
+icon.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+
+    if (document.body.classList.contains("dark")) {
+        themeIcon.src = "/Front/src/sol.png";
+
+    } else {
+        themeIcon.src = "/Front/src/lua.png";
+        
+    }
+});
+
 $(document).ready(function(){
     // Faz a requisição para a API
     $.getJSON("http://127.0.0.1:5000/obter-imagem", function(data) {
         console.log("Resposta recebida: ", data); // Depuração da resposta
         if (data.imagem) {
             $('#imagem-cardapio').attr('src', 'data:image/png;base64,' + data.imagem);
-            console.log("Imagem carregada com sucesso.");
+            data.refeicoes.forEach(info_diaSemana => {
+                render_cardapio(info_diaSemana)
+            });
+            console.log(data.refeicoes[0])
+
         } else {
             alert("Imagem não encontrada!");
         }
@@ -72,85 +152,3 @@ $(document).ready(function(){
     });
 });
 
-function render_refeicao(diaSemana){
-    const div = document.createElement('div')
-    div.setAttribute('class', 'refeicaoAtiva')
-    diaSemana.appendChild(div)
-}
-
-function render_cardapio(info_diaSemana) {
-
-    const cardapio = document.getElementById('cardapio')
-
-    const diaSemana = document.createElement('div')
-    diaSemana.setAttribute('class', 'diaSemana')
-
-    const dia_semana = document.createElement('p')
-    dia_semana.textContent = info_diaSemana.dia_semana
-    
-    diaSemana.appendChild(dia_semana)
-
-    render_refeicao(diaSemana)
-    render_refeicao(diaSemana)
-    render_refeicao(diaSemana)
-
-    const dia = document.createElement('p')
-    dia.textContent = info_diaSemana.dia
-    
-    diaSemana.appendChild(dia)
-
-    cardapio.appendChild(diaSemana)
-
-}
-
-const cardapio = [
-    {dia: '02/09', dia_semana: 'Seg'},
-    {dia: '03/09', dia_semana: 'Ter'},
-    {dia: '04/09', dia_semana: 'Qua'},
-    {dia: '05/09', dia_semana: 'Qui'},
-    {dia: '06/09', dia_semana: 'Sex'},
-]
-
-cardapio.forEach(info_diaSemana => {
-    render_cardapio(info_diaSemana)
-});
-
-
-const refeicao = Array.prototype.slice.call(document.getElementsByClassName("refeicaoAtiva"))
-const bt_limpar = document.getElementById('bt_limpar')
-
-function press(){
-    this.classList.toggle("refeicaoInativa")
-}
-
-refeicao.forEach(element => {
-    element.addEventListener("click", press)
-});
-
-function press_bt_limpar(){
-    refeicao.forEach(element => {
-        element.classList.add("refeicaoInativa")
-    });
-    
-}
-
-function press_bt_confirmar(){
-    alert('As informações foram enviadas com sucesso!')
-    window.location = 'Menu.html'
-}
-
-//MODO DARK
-const icon = document.getElementById("MudarTema");
-const themeIcon = document.getElementById("MudarTema");
-
-icon.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-
-    if (document.body.classList.contains("dark")) {
-        themeIcon.src = "/Front/src/sol.png";
-
-    } else {
-        themeIcon.src = "/Front/src/lua.png";
-        
-    }
-});
