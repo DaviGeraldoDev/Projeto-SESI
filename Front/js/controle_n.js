@@ -86,7 +86,6 @@ const themeIcon = document.getElementById("MudarTema");
 
 icon.addEventListener("click", () => {
     document.body.classList.toggle("dark");
-
     if (document.body.classList.contains("dark")) {
         themeIcon.src = "/Front/src/sol.png";
         
