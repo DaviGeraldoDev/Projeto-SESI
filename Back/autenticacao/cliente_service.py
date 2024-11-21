@@ -6,7 +6,7 @@ def cadastra_cardapio(cardapio, data_inicio, data_fim):
     return 'Cardapio cadastrado com sucesso', 200
 
 def AgendarRefeicao(data):
-    print(data['id_usuario'])
+    
     AgendarRefeicaoDb(data['id_usuario'], data['refeicoes'])
     
     return 'Refeição Agendada com sucesso', 200

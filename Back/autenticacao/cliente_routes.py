@@ -10,15 +10,16 @@ CORS(cliente_app)
 @cliente_app.route('/refeicaoAgendada', methods=['POST'])
 def refeicaoAgendada():
     data = request.get_json()
+    print(data)
     refeicaoAgendada = AgendarRefeicao(data)
     return refeicaoAgendada
 
 @cliente_app.route('/obter-imagem', methods=['GET'])
 def obter_imagem():
-    imagem_base64 = recuperar_imagem()
-    if imagem_base64:
+    resultado = recuperar_imagem()
+    if resultado:
         # Retorna a imagem em formato JSON
-        return jsonify({'imagem': imagem_base64})
+        return resultado
     else:
         return jsonify({'erro': 'Imagem não encontrada'}), 404
 

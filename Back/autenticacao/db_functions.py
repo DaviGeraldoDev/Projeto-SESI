@@ -1,5 +1,6 @@
 import pyodbc
 import base64
+from datetime import datetime, timedelta
 "Mariane Nutri" "SESI123"
 
 #Conexão com o Banco de dados
@@ -24,17 +25,35 @@ cursor = cnxn.cursor()
 
 def recuperar_imagem():
     # Consultando a imagem
-    comando_sql = "SELECT imagem FROM cardapio WHERE data_inicial = ? AND data_final = ?"
-    data_inicio = '2024-05-01'  # Defina as datas como critério de busca
+    comando_sql = "SELECT imagem,data_inicial,data_final FROM cardapio WHERE data_inicial = ? AND data_final = ?"
+    data_inicio = '2024-05-01'
     data_final = '2024-05-08'
     
     resultado = cursor.execute(comando_sql, (data_inicio, data_final)).fetchone()
 
-    # Retorna a imagem binária se existir
-    if resultado:
-        # Converte a imagem binária para Base64
-        imagem_base64 = base64.b64encode(resultado[0]).decode('utf-8')
-        return imagem_base64
+    data_inicio = datetime.strptime(resultado[1], '%Y-%m-%d')
+    data_final = datetime.strptime(resultado[2], '%Y-%m-%d')
+    data_inicio_2 = data_inicio + timedelta(days=1)
+    data_inicio_3 = data_inicio + timedelta(days=2)
+    data_inicio_4 = data_inicio + timedelta(days=3)
+
+    data_inicio_formatada = data_inicio.strftime('%d/%m')
+    data_inicio_2_formatada = data_inicio_2.strftime('%d/%m')
+    data_inicio_3_formatada = data_inicio_3.strftime('%d/%m')
+    data_inicio_4_formatada = data_inicio_4.strftime('%d/%m')
+    data_final_formatada = data_final.strftime('%d/%m')
+    imagem_base64 = base64.b64encode(resultado[0]).decode('utf-8')
+
+    resultado_formatado = {'imagem': imagem_base64,
+                           'refeicoes':
+                           [{"dia": data_inicio_formatada, "dia_semana": 'Seg'},
+                           {"dia": data_inicio_2_formatada, "dia_semana": 'Ter'},
+                           {"dia": data_inicio_3_formatada, "dia_semana": 'Qua'},
+                           {"dia": data_inicio_4_formatada, "dia_semana": 'Qui'},
+                           {"dia": data_final_formatada, "dia_semana": 'Sex'}]}
+    
+    if resultado_formatado != None:        
+        return resultado_formatado
     else:
         return None
 
@@ -64,3 +83,5 @@ def AgendarRefeicaoDb(id_usuario, Refeicoes):
         cursor.execute(comando_sql)
 
     cursor.commit()
+
+recuperar_imagem()
