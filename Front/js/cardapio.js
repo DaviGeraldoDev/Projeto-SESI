@@ -83,7 +83,11 @@ $(document).ready(function(){
             data.refeicoes.forEach(info_diaSemana => {
                 render_cardapio(info_diaSemana)
             });
-            console.log(data.refeicoes[0])
+            const seg = data.refeicoes[0].dia
+            const ter = data.refeicoes[1].dia
+            const qua = data.refeicoes[2].dia
+            const qui = data.refeicoes[3].dia
+            const sex = data.refeicoes[4].dia
 
         } else {
             alert("Imagem não encontrada!");
@@ -105,11 +109,11 @@ $(document).ready(function(){
         var user_data = {
           'id_usuario': 1,
           'refeicoes': [
-            {dia: '02/09', dia_semana: 'Seg', cafe_manha: false, almoco: false, cafe_tarde: false},
-            {dia: '03/09', dia_semana: 'Ter', cafe_manha: false, almoco: false, cafe_tarde: false},
-            {dia: '04/09', dia_semana: 'Qua', cafe_manha: false, almoco: false, cafe_tarde: false},
-            {dia: '05/09', dia_semana: 'Qui', cafe_manha: false, almoco: false, cafe_tarde: false},
-            {dia: '06/09', dia_semana: 'Sex', cafe_manha: false, almoco: false, cafe_tarde: false}
+            {dia: seg, dia_semana: 'Seg', cafe_manha: false, almoco: false, cafe_tarde: false},
+            {dia: ter, dia_semana: 'Ter', cafe_manha: false, almoco: false, cafe_tarde: false},
+            {dia: qua, dia_semana: 'Qua', cafe_manha: false, almoco: false, cafe_tarde: false},
+            {dia: qui, dia_semana: 'Qui', cafe_manha: false, almoco: false, cafe_tarde: false},
+            {dia: sex, dia_semana: 'Sex', cafe_manha: false, almoco: false, cafe_tarde: false}
           ]
         };
 
