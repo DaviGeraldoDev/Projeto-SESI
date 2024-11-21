@@ -23,7 +23,7 @@ function render_campo(info_comer,  refeicao){
 
 function render_refeicao(refeicao, diaSemana){
     const div = document.createElement('div')
-    div.setAttribute('class', 'refeicao')
+    div.setAttribute('class','refeicao')
     render_campo(refeicao, div)
     diaSemana.appendChild(div)
 }
@@ -59,6 +59,27 @@ cardapio.forEach(info_diaSemana => {
     render_cardapio(info_diaSemana)
 });
 
+  document.querySelectorAll('.diaSemana').forEach(dia => {
+      dia.addEventListener('click', function () {
+          const pagina = document.getElementById('pagina');
+          const paginaInfo = document.getElementById('pagina-info');
+          paginaInfo.innerHTML = this.innerHTML;
+          pagina.style.display = 'block';
+      });
+  });
+
+const pagina = document.getElementById('pagina');
+const span = document.querySelector('.fechar');
+
+span.addEventListener('click', function () {
+    pagina.style.display = 'none';
+});
+
+window.addEventListener('click', function (event) {
+    if (event.target === pagina) {
+        pagina.style.display = 'none';
+    }
+});
 //MODO DARK
 const icon = document.getElementById("MudarTema");
 const themeIcon = document.getElementById("MudarTema");
