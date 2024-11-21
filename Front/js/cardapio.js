@@ -73,15 +73,11 @@ $(document).ready(function(){
             });
 
             refeicao = Array.prototype.slice.call(document.getElementsByClassName("refeicaoAtiva"))
-            
 
             refeicao.forEach(element => {
                 element.addEventListener("click", press)
             });
-       
-
-
-            console.log(data.refeicoes[0])
+    
 
         } else {
             alert("Imagem não encontrada!");
