@@ -1,7 +1,7 @@
 function render_refeicao(diaSemana){
     const div = document.createElement('div')
     div.setAttribute('class', 'refeicaoAtiva')
-    //div.setAttribute('estado','0')
+    div.setAttribute('estado','1')
     diaSemana.appendChild(div)
 }
 
@@ -11,6 +11,7 @@ function render_cardapio(info_diaSemana) {
 
     const diaSemana = document.createElement('div')
     diaSemana.setAttribute('class', 'diaSemana')
+    diaSemana.setAttribute('data', info_diaSemana.dia)
 
     const dia_semana = document.createElement('p')
     dia_semana.textContent = info_diaSemana.dia_semana
@@ -30,33 +31,17 @@ function render_cardapio(info_diaSemana) {
 
 }
 
-const refeicao = Array.prototype.slice.call(document.getElementsByClassName("refeicaoAtiva"))
-
 function press(){
     this.classList.toggle("refeicaoInativa")
-    /*if (this.state == '0') {
-        this.state = '1'
+
+    if (this.getAttribute('estado') == '0') {
+        this.setAttribute('estado','1')
     }else{
-        this.state = '0'
-    }*/
-    console.log("this.state =",this.estado)  
+        this.setAttribute('estado','0')
+    }
+  
 }
 
-refeicao.forEach(element => {
-    element.addEventListener("click", press)
-});
-
-function press_bt_limpar(){
-    refeicao.forEach(element => {
-        element.classList.add("refeicaoInativa")
-    });
-    
-}
-
-function press_bt_confirmar(){
-    alert('As informações foram enviadas com sucesso!')
-    window.location = 'Menu.html'
-}
 
 //MODO DARK
 const icon = document.getElementById("MudarTema");
@@ -74,15 +59,28 @@ icon.addEventListener("click", () => {
     }
 });
 
+let refeicao = null
+
 $(document).ready(function(){
     // Faz a requisição para a API
     $.getJSON("http://127.0.0.1:5000/obter-imagem", function(data) {
         console.log("Resposta recebida: ", data); // Depuração da resposta
         if (data.imagem) {
             $('#imagem-cardapio').attr('src', 'data:image/png;base64,' + data.imagem);
+
             data.refeicoes.forEach(info_diaSemana => {
                 render_cardapio(info_diaSemana)
             });
+
+            refeicao = Array.prototype.slice.call(document.getElementsByClassName("refeicaoAtiva"))
+            
+
+            refeicao.forEach(element => {
+                element.addEventListener("click", press)
+            });
+       
+
+
             console.log(data.refeicoes[0])
 
         } else {
@@ -93,23 +91,24 @@ $(document).ready(function(){
     });
 
     $('#bt_confirmar').click(  function () {
+        var dias = Array.prototype.slice.call(document.getElementsByClassName("diaSemana"))
         var vou_comer = document.getElementsByClassName("refeicaoAtiva");
         var array_resultado = Array.prototype.slice.call(vou_comer).map(function(element) {
-          return element.classList.contains("refeicaoInativa") ? 0 : 1;
+          return element.getAttribute('estado');
         });
 
         var boolean_resultado = array_resultado.map(function(valor) {
-          return valor === 1; 
+          return valor == 1; 
         });
 
         var user_data = {
-          'id_usuario': 1,
+          'id_usuario': 4,
           'refeicoes': [
-            {dia: '02/09', dia_semana: 'Seg', cafe_manha: false, almoco: false, cafe_tarde: false},
-            {dia: '03/09', dia_semana: 'Ter', cafe_manha: false, almoco: false, cafe_tarde: false},
-            {dia: '04/09', dia_semana: 'Qua', cafe_manha: false, almoco: false, cafe_tarde: false},
-            {dia: '05/09', dia_semana: 'Qui', cafe_manha: false, almoco: false, cafe_tarde: false},
-            {dia: '06/09', dia_semana: 'Sex', cafe_manha: false, almoco: false, cafe_tarde: false}
+            {data: dias[1].getAttribute('data'), dia_semana: 'Seg', cafe_manha: false, almoco: false, cafe_tarde: false},
+            {data: dias[2].getAttribute('data'), dia_semana: 'Ter', cafe_manha: false, almoco: false, cafe_tarde: false},
+            {data: dias[3].getAttribute('data'), dia_semana: 'Qua', cafe_manha: false, almoco: false, cafe_tarde: false},
+            {data: dias[4].getAttribute('data'), dia_semana: 'Qui', cafe_manha: false, almoco: false, cafe_tarde: false},
+            {data: dias[5].getAttribute('data'), dia_semana: 'Sex', cafe_manha: false, almoco: false, cafe_tarde: false}
           ]
         };
 
@@ -144,11 +143,19 @@ $(document).ready(function(){
             }
         };
         var data = JSON.stringify(
-            {user_data}
+            user_data
                 
          );
         xhr.send(data);    
 
     });
 });
+
+
+function press_bt_limpar(){
+    refeicao.forEach(element => {
+        element.classList.add("refeicaoInativa")
+        element.setAttribute('estado', '0')
+    });
+}
 

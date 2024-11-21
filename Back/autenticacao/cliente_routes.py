@@ -10,6 +10,7 @@ CORS(cliente_app)
 @cliente_app.route('/refeicaoAgendada', methods=['POST'])
 def refeicaoAgendada():
     data = request.get_json()
+    print(data)
     refeicaoAgendada = AgendarRefeicao(data)
     return refeicaoAgendada
 
