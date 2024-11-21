@@ -10,3 +10,4 @@ def AgendarRefeicao(data):
     AgendarRefeicaoDb(data['id_usuario'], data['refeicoes'])
     
     return 'Refeição Agendada com sucesso', 200
+

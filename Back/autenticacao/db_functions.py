@@ -36,21 +36,16 @@ def recuperar_imagem():
     data_inicio_2 = data_inicio + timedelta(days=1)
     data_inicio_3 = data_inicio + timedelta(days=2)
     data_inicio_4 = data_inicio + timedelta(days=3)
-
-    data_inicio_formatada = data_inicio.strftime('%d/%m')
-    data_inicio_2_formatada = data_inicio_2.strftime('%d/%m')
-    data_inicio_3_formatada = data_inicio_3.strftime('%d/%m')
-    data_inicio_4_formatada = data_inicio_4.strftime('%d/%m')
-    data_final_formatada = data_final.strftime('%d/%m')
+    
     imagem_base64 = base64.b64encode(resultado[0]).decode('utf-8')
 
     resultado_formatado = {'imagem': imagem_base64,
                            'refeicoes':
-                           [{"dia": data_inicio_formatada, "dia_semana": 'Seg'},
-                           {"dia": data_inicio_2_formatada, "dia_semana": 'Ter'},
-                           {"dia": data_inicio_3_formatada, "dia_semana": 'Qua'},
-                           {"dia": data_inicio_4_formatada, "dia_semana": 'Qui'},
-                           {"dia": data_final_formatada, "dia_semana": 'Sex'}]}
+                           [{"dia": str(data_inicio), "dia_semana": 'Seg'},
+                           {"dia": str(data_inicio_2), "dia_semana": 'Ter'},
+                           {"dia": str(data_inicio_3), "dia_semana": 'Qua'},
+                           {"dia": str(data_inicio_4), "dia_semana": 'Qui'},
+                           {"dia": str(data_final), "dia_semana": 'Sex'}]}
     
     if resultado_formatado != None:        
         return resultado_formatado
@@ -73,7 +68,6 @@ def inserir_imagem(imagem_binaria, data_inicio, data_fim):
     cursor.commit()
 
 def AgendarRefeicaoDb(id_usuario, Refeicoes):
-
     for Refeicao in Refeicoes:
         comando_sql = f"""
             insert into REFEICAO_AGENDADA (id_data, id_usuario, cafe_manha, almoco, cafe_tarde) 
@@ -83,5 +77,3 @@ def AgendarRefeicaoDb(id_usuario, Refeicoes):
         cursor.execute(comando_sql)
 
     cursor.commit()
-
-recuperar_imagem()

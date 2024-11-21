@@ -39,9 +39,7 @@ function press(){
     }else{
         this.setAttribute('estado','0')
     }
-  
 }
-
 
 //MODO DARK
 const icon = document.getElementById("MudarTema");
@@ -139,8 +137,7 @@ $(document).ready(function(){
             }
         };
         var data = JSON.stringify(
-            user_data
-                
+            user_data   
          );
         xhr.send(data);    
 
