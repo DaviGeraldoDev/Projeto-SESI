@@ -41,6 +41,13 @@ h1{
     color: #FAFAFA;
 }
 
+#pagina-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Para preencher a altura da janela */
+}
+
 #cardapio{
     display: flex;
     align-items: center;
