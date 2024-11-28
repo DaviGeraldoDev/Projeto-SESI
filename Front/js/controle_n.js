@@ -86,7 +86,8 @@ document.querySelectorAll('.diaSemana').forEach((dia, index) => {
         paginaInfo.style.display = 'flex';
         paginaInfo.style.justifyContent = 'center';
         paginaInfo.style.alignItems = 'center';
-        paginaInfo.style.minHeight = '80vh';
+        paginaInfo.style.minHeight = '40vh';
+        paginaInfo.style.maxHeight='50vh'
 
 
         
@@ -148,10 +149,11 @@ document.querySelectorAll('.diaSemana').forEach((dia, index) => {
 
         const tituloRefeicoes = document.createElement('h3');
         tituloRefeicoes.textContent = `Cardápio de ${infoDia.dia}`;
+        tituloRefeicoes.className = 'titulo-centralizado';
         paginaInfo.appendChild(tituloRefeicoes);
 
-        paginaInfo.appendChild(tabela);
-        pagina.style.display = 'block';
+paginaInfo.appendChild(tabela);
+pagina.style.display = 'block';
     });
 });
 
