@@ -23,7 +23,7 @@ function render_cardapio(info_diaSemana) {
     render_refeicao(diaSemana)
 
     const dia = document.createElement('p')
-    dia.textContent = info_diaSemana.dia
+    dia.textContent = info_diaSemana.dia.slice(5,10)
     
     diaSemana.appendChild(dia)
 
